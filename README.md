@@ -41,10 +41,10 @@ Each user should have an account to access all the functionalities of website. U
 #### - 2 - 8 - Administration
 
 The Administrator will be provided with special functionalities like
-• Add or delete a book category
-• Add or delete a member
-• Manage member orders.
-• Add or delete a Credit Card type.
+- Add or delete a book category
+- Add or delete a member
+- Manage member orders.
+- Add or delete a Credit Card type.
 
 ## - 3 - Technologies :
 
