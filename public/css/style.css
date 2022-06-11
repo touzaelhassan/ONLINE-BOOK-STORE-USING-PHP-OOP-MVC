@@ -6,6 +6,9 @@
 }
 
 /* Start Header Section */
+header {
+  border-bottom: 1px solid rgb(225, 225, 225);
+}
 .navbar__logo {
   border: 1px solid #000;
 }
@@ -20,7 +23,7 @@
 
 /* End Header Section */
 
-/* Start Hero Section */
+/* Start Home Page Section */
 
 .hero {
   display: flex;
@@ -48,4 +51,31 @@
   border-radius: 0 !important;
 }
 
-/* End Hero Section */
+/* End Home Page Section */
+
+/* Start Signup Page */
+.signup {
+  padding: 60px 20px;
+  background-color: #f8f9fa;
+}
+/* End Signup Page */
+
+/* Start Signup Page */
+.login {
+  padding: 0 20px;
+  padding-top: 45px;
+  background-color: #f8f9fa;
+}
+
+@media (min-width: 992px) {
+  .login {
+    padding: 90px 0;
+  }
+}
+/* End Signup Page */
+
+/* Start Footer Section */
+footer {
+  border-top: 1px solid rgb(225, 225, 225);
+}
+/* End Footer Section */

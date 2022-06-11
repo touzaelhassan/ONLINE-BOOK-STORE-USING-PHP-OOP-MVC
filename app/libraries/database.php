@@ -1,9 +1,8 @@
 <?php
-
 class Database
 {
   private $db_host = 'localhost';
-  private $db_name = 'online_book_store';
+  private $db_name = 'book_store';
   private $db_user = 'root';
   private $db_password = '';
 
@@ -14,7 +13,6 @@ class Database
   public function __construct()
   {
     $dsn = "mysql:host=$this->db_host;dbname=$this->db_name";
-
     try {
       $this->connection = new PDO($dsn, $this->db_user, $this->db_password);
     } catch (PDOException $e) {
