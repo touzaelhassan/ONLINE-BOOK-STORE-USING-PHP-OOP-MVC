@@ -1,12 +1,13 @@
 <?php
+
 class Database
 {
-  private $db_host = DB_HOST;
-  private $db_name = DB_NAME;
-  private $db_user = DB_USER;
-  private $db_password = DB_PASSWORD;
+  private $db_host = 'localhost';
+  private $db_name = 'online_book_store';
+  private $db_user = 'root';
+  private $db_password = '';
 
-  private $db_handler;
+  private $connection;
   private $stmt;
   private $error;
 
@@ -14,43 +15,17 @@ class Database
   {
     $dsn = "mysql:host=$this->db_host;dbname=$this->db_name";
 
-    $options = [
-      PDO::ATTR_PERSISTENT => true,
-      PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION
-    ];
-
     try {
-      $this->db_handler = new PDO($dsn, $this->db_user, $this->db_password, $options);
+      $this->connection = new PDO($dsn, $this->db_user, $this->db_password);
     } catch (PDOException $e) {
       $this->error = $e->getMessage();
       echo $this->error;
     }
   }
 
-  public function query($sql)
+  public function prepare($sql)
   {
-    $this->stmt = $this->db_handler->prepare($sql);
-  }
-
-  public function bind($param, $value, $type = null)
-  {
-    if (is_null($type)) {
-      switch (true) {
-        case is_int($value):
-          $type = PDO::PARAM_INT;
-          break;
-        case is_bool($value):
-          $type = PDO::PARAM_BOOL;
-          break;
-        case is_null($value):
-          $type = PDO::PARAM_NULL;
-          break;
-        default:
-          $type = PDO::PARAM_STR;
-      }
-    }
-
-    $this->stmt->bindValue($param, $value, $type);
+    return $this->stmt = $this->connection->prepare($sql);
   }
 
   public function execute()
@@ -58,20 +33,13 @@ class Database
     return $this->stmt->execute();
   }
 
-  public function result_set()
+  public function get_all()
   {
-    $this->execute();
-    return $this->stmt->fetchAll(PDO::FETCH_OBJ);
+    return $this->stmt = $this->stmt->fetchAll(PDO::FETCH_OBJ);
   }
 
-  public function single()
+  public function get_one()
   {
-    $this->execute();
-    return $this->stmt->fetch(PDO::FETCH_OBJ);
-  }
-
-  public function row_count()
-  {
-    return $this->stmt->rowCount();
+    return $this->stmt = $this->stmt->fetch(PDO::FETCH_OBJ);
   }
 }

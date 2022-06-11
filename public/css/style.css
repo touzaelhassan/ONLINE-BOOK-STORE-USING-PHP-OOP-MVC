@@ -4,3 +4,48 @@
   font-family: roboto, 'sans-serif';
   box-sizing: border-box;
 }
+
+/* Start Header Section */
+.navbar__logo {
+  border: 1px solid #000;
+}
+
+.navbar__toggler {
+  border: 1px solid #000;
+}
+
+.navbar__collapse {
+  justify-content: space-between;
+}
+
+/* End Header Section */
+
+/* Start Hero Section */
+
+.hero {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80vh;
+  background-image: url('../images/hero.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: rgba(0, 0, 0, 0.6);
+  background-blend-mode: multiply;
+}
+
+.hero__content {
+  width: 500px;
+}
+
+.search__form input {
+  margin: 0 !important;
+  border-radius: 0 !important;
+}
+
+.search__form button {
+  border-radius: 0 !important;
+}
+
+/* End Hero Section */
