@@ -8,7 +8,7 @@
         </a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">
+        <a class="nav-link" href="<?php echo URLROOT; ?>/categories">
           <i class="fa-solid fa-house-chimney"></i>
           Categories
         </a>

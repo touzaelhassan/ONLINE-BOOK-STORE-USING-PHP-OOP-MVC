@@ -15,12 +15,18 @@
   <header>
     <nav class="navbar navbar-expand-lg bg-light py-4">
       <div class="container">
-        <a class="navbar-brand fw-bold" href="<?php echo URLROOT; ?>">BookStore</a>
+        <a class="navbar-brand fw-bold" href="<?php echo URLROOT; ?>">BOOKSTORE</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse navbar__collapse" id="navbarSupportedContent">
           <ul class="navbar-nav  mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a href="#" class="nav-link">Home</a>
+            </li>
+            <li class="nav-item">
+              <a href="#" class="nav-link">Who we are</a>
+            </li>
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                 Categories

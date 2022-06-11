@@ -53,7 +53,6 @@ class Users extends Controller
         }
       }
 
-
       if (
         empty($data['name_error']) &&
         empty($data['email_error']) &&
