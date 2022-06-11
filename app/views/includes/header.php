@@ -34,16 +34,38 @@
           </ul>
           <?php if (isset($_SESSION["user_role"])) : ?>
 
-            <ul class="navbar-nav ml-auto">
-              <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                  <?php echo $_SESSION["user_name"]; ?>
-                </a>
-                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                  <li><a class="dropdown-item" href="<?php echo URLROOT; ?>/users/logout">Logout</a></li>
-                </ul>
-              </li>
-            </ul>
+            <?php if ($_SESSION["user_role"] === 1) : ?>
+              <ul class="navbar-nav ml-auto">
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    Admin
+                  </a>
+                  <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <li><a class="dropdown-item" href="<?php echo URLROOT; ?>/admin">Dashboard</a></li>
+                    <li><a class="dropdown-item" href="<?php echo URLROOT; ?>/users/logout">Logout</a></li>
+                  </ul>
+                </li>
+              </ul>
+            <?php else : ?>
+              <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                  <a href="#" class="nav-link">
+                    <span>Cart</span>
+                    <span>0</span>
+                  </a>
+                </li>
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <?php echo $_SESSION["user_name"]; ?>
+                  </a>
+                  <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <li><a class="dropdown-item" href="#">Profile</a></li>
+                    <li><a class="dropdown-item" href="#">My Books</a></li>
+                    <li><a class="dropdown-item" href="<?php echo URLROOT; ?>/users/logout">Logout</a></li>
+                  </ul>
+                </li>
+              </ul>
+            <?php endif; ?>
 
           <?php else : ?>
             <ul class="navbar-nav">
