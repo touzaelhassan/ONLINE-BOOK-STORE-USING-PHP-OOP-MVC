@@ -7,19 +7,15 @@
         <h2 class="text-center">LOGIN</h2>
         <p class="text-center">Please fill your credentials to login</p>
         <form action="<?php echo URLROOT; ?>/users/login" method="POST">
-          <div class="form-group">
-            <label for="user_email">Email : <sup class="text-danger">*</sup></label>
-            <input type="email" name="user_email" class="form-control form-control-lg <?php echo (!empty($data['user_email_error'])) ? 'is-invalid' : ''; ?>" value="<?php // echo $data['user_email']; 
-                                                                                                                                                                      ?>">
-            <span class="invalid-feedback"><?php // echo $data['user_email_error']; 
-                                            ?></span>
+          <div class="form-group mb-3">
+            <label for="email">Email : <sup class="text-danger">*</sup></label>
+            <input type="email" name="email" class="form-control form-control-lg <?php echo (!empty($data['email_error'])) ? 'is-invalid' : ''; ?>" value="<?php echo $data['email']; ?>">
+            <span class="invalid-feedback"><?php echo $data['email_error']; ?></span>
           </div>
-          <div class="form-group">
-            <label for="user_password">Password : <sup class="text-danger">*</sup></label>
-            <input type="password" name="user_password" class="form-control form-control-lg <?php echo (!empty($data['user_password_error'])) ? 'is-invalid' : ''; ?>" value="<?php // echo $data['user_password']; 
-                                                                                                                                                                              ?>">
-            <span class="invalid-feedback"><?php // echo $data['user_password_error']; 
-                                            ?></span>
+          <div class="form-group mb-3">
+            <label for="password">Password : <sup class="text-danger">*</sup></label>
+            <input type="password" name="password" class="form-control form-control-lg <?php echo (!empty($data['password_error'])) ? 'is-invalid' : ''; ?>" value="<?php echo $data['password'];  ?>">
+            <span class="invalid-feedback"><?php echo $data['password_error']; ?></span>
           </div>
           <div class="row mt-3 form__footer">
             <div class="col form__footer__right">

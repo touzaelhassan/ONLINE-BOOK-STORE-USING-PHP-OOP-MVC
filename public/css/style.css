@@ -5,6 +5,10 @@
   box-sizing: border-box;
 }
 
+a {
+  text-decoration: none;
+}
+
 /* Start Header Section */
 header {
   border-bottom: 1px solid rgb(225, 225, 225);
@@ -55,7 +59,7 @@ header {
 
 /* Start Signup Page */
 .signup {
-  padding: 60px 20px;
+  padding: 35px 20px;
   background-color: #f8f9fa;
 }
 /* End Signup Page */
@@ -63,7 +67,7 @@ header {
 /* Start Signup Page */
 .login {
   padding: 0 20px;
-  padding-top: 45px;
+  padding-top: 25px;
   background-color: #f8f9fa;
 }
 
@@ -73,6 +77,41 @@ header {
   }
 }
 /* End Signup Page */
+
+/* Start Login Success Section */
+.login-success {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.login-success__content {
+  padding: 40px;
+  border: 2px solid #eee;
+  text-align: center;
+}
+
+.login-success__content i {
+  margin-bottom: 20px;
+  color: green;
+  font-size: 30px;
+}
+
+.login-success__content a {
+  display: inline-block;
+  margin-top: 11px;
+  border: 2px solid green;
+  padding: 8px 40px;
+  color: #fff;
+  background-color: green;
+}
+.login-success__content a:hover {
+  color: green;
+  background-color: #fff;
+}
+
+/* End Login Success Section */
 
 /* Start Footer Section */
 footer {
