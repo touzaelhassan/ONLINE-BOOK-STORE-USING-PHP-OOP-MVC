@@ -2,7 +2,7 @@
   <div class="position-sticky pt-3">
     <ul class="nav flex-column">
       <li class="nav-item">
-        <a class="nav-link active" aria-current="page" href="#">
+        <a class="nav-link active" aria-current="page" href="<?php echo URLROOT; ?>/admin">
           <i class="fa-solid fa-house-chimney"></i>
           Dashboard
         </a>
@@ -14,31 +14,31 @@
         </a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">
+        <a class="nav-link" href="<?php echo URLROOT; ?>/publishers">
           <i class="fa-solid fa-house-chimney"></i>
           Publishers
         </a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">
+        <a class="nav-link" href="<?php echo URLROOT; ?>/authors">
           <i class="fa-solid fa-house-chimney"></i>
           Authors
         </a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">
+        <a class="nav-link" href="<?php echo URLROOT; ?>/books">
           <i class="fa-solid fa-house-chimney"></i>
           Books
         </a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">
+        <a class="nav-link" href="<?php echo URLROOT; ?>/users">
           <i class="fa-solid fa-house-chimney"></i>
           Users
         </a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">
+        <a class="nav-link" href="<?php echo URLROOT; ?>/orders">
           <i class="fa-solid fa-house-chimney"></i>
           Orders
         </a>

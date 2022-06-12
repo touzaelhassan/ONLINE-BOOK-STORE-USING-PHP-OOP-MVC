@@ -24,7 +24,7 @@
           <div class="col-md-6">
             <div class="card">
               <div class="card-header">
-                <h4 class="text-center">Add new category</h4>
+                <h4 class="text-center">Update publisher</h4>
               </div>
               <div class="card-body">
                 <form action="" method="POST">
@@ -34,13 +34,13 @@
                     <span class="invalid-feedback"><?php echo $data['name_error']; ?></span>
                   </div>
                   <div class="form-group mb-3">
-                    <label for="description">Description : <sup class="text-danger">*</sup></label>
-                    <textarea name="description" class="form-control form-control-lg <?php echo (!empty($data['description_error'])) ? 'is-invalid' : ''; ?>"><?php echo $data['description']; ?></textarea>
-                    <span class="invalid-feedback"><?php echo $data['description_error']; ?></span>
+                    <label for="address">Adrress : <sup class="text-danger">*</sup></label>
+                    <textarea name="address" class="form-control form-control-lg <?php echo (!empty($data['address_error'])) ? 'is-invalid' : ''; ?>"><?php echo $data['address']; ?></textarea>
+                    <span class="invalid-feedback"><?php echo $data['address_error']; ?></span>
                   </div>
                   <div class="row mt-3 form__footer">
                     <div class="col form__footer__right">
-                      <input type="submit" value="Add" class="btn btn-success d-block form__btn">
+                      <input type="submit" value="Update" class="btn btn-success d-block form__btn">
                     </div>
                   </div>
                 </form>
