@@ -8,6 +8,23 @@ class Users extends Controller
     $this->userModel = $this->model('User');
   }
 
+
+  public function index()
+  {
+    $users = $this->userModel->get_users();
+    $data = [
+      'users' => $users
+    ];
+    $this->view('admin/users/index', $data);
+  }
+
+  public function delete($id)
+  {
+    $this->userModel->id = $id;
+    $this->userModel->delete_user();
+    header('Location: ' . URLROOT . '/users');
+  }
+
   public function signup()
   {
 

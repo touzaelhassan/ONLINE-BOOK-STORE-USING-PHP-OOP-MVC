@@ -13,9 +13,26 @@ class User
     $this->db = new Database();
   }
 
+  public function get_users()
+  {
+    $this->db->prepare("SELECT * FROM users");
+    $this->db->execute();
+    return $this->db->get_all();
+  }
+
   public function create_user()
   {
     $this->db->prepare("INSERT INTO users (name, email, password) VALUES ('$this->name', '$this->email', '$this->password')");
+    if ($this->db->execute()) {
+      return true;
+    } else {
+      return false;
+    }
+  }
+
+  public function delete_user()
+  {
+    $this->db->prepare("DELETE FROM users WHERE id = $this->id");
     if ($this->db->execute()) {
       return true;
     } else {
