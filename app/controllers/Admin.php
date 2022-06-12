@@ -9,11 +9,7 @@ class Admin extends Controller
 
   public function index()
   {
-    $data = [
-      'title' => 'Admin',
-      'description' => 'Admin',
-      'keywords' => 'Admin',
-    ];
+    $data = [];
 
     $this->view('admin/index', $data);
   }
