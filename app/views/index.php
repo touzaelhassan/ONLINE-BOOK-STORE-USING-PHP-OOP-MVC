@@ -1,9 +1,9 @@
 <?php require APPROOT . '/views/includes/header.php' ?>
 <section class="hero">
   <div class="hero__content">
-    <h1 class="text-white">Find a Book ...</h1>
+    <h1 class="text-white">Find a Book</h1>
     <p class="text-white mt-3 mb-5">
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione reprehenderit ipsam esse nostrum dolor odit vel adipisci eligendi eveniet perferendis!
+      Lorem ipsum dolor sit amet consectetur adipisicn elit ration reprehend ipsam esse nostrum dolor odit vel adipisci eligendi eveniet dolor sitam amet perferendis ipsum dolon.
     </p>
     <form class="d-flex search__form" role="search">
       <input class="form-control me-2 py-2" type="search" placeholder="Find a book by title..." aria-label="Search">

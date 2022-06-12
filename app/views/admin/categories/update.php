@@ -24,10 +24,10 @@
           <div class="col-md-6">
             <div class="card">
               <div class="card-header">
-                <h4 class="text-center">Add new category</h4>
+                <h4 class="text-center">Update category</h4>
               </div>
               <div class="card-body">
-                <form action="<?php echo URLROOT; ?>/categories/create" method="POST">
+                <form action="" method="POST">
                   <form action="<?php echo URLROOT; ?>/users/login" method="POST">
                     <div class="form-group mb-3">
                       <label for="name">Name : <sup class="text-danger">*</sup></label>
@@ -41,7 +41,7 @@
                     </div>
                     <div class="row mt-3 form__footer">
                       <div class="col form__footer__right">
-                        <input type="submit" value="Add" class="btn btn-success d-block form__btn">
+                        <input type="submit" value="Update" class="btn btn-success d-block form__btn">
                       </div>
                     </div>
                   </form>

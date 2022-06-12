@@ -18,18 +18,53 @@
           </button>
         </div>
       </div>
-      <section>
-        <?php
-
-        echo "<pre>";
-        print_r($data['categories']);
-        echo "</pre>";
-
-        ?>
-
-      </section>
-    </main>
+      <div class="categories">
+        <div class="row">
+          <div class="col">
+            <div class="card">
+              <div class="card-header d-flex justify-content-between">
+                <h4>Categories</h4>
+                <a href="<?php echo URLROOT; ?>/categories/create" class="btn btn-success"><i class="fa-solid fa-plus"></i></a>
+              </div>
+              <div class="card-body">
+                <table class="table table-bordered">
+                  <thead>
+                    <tr>
+                      <th>#</th>
+                      <th>Name</th>
+                      <th>Description</th>
+                      <th>Update</th>
+                      <th>Delete</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <?php foreach ($data['categories'] as $category) : ?>
+                      <tr>
+                        <td><?php echo $category->id ?></td>
+                        <td><?php echo $category->name ?></td>
+                        <td><?php echo $category->description ?></td>
+                        <td>
+                          <a href="<?php echo URLROOT; ?>/categories/update/<?php echo $category->id ?>" class="btn btn-primary btn-sm">
+                            <i class="fa fa-pencil"></i>
+                          </a>
+                        </td>
+                        <td>
+                          <a href="<?php echo URLROOT; ?>/categories/delete/<?php echo $category->id ?>" class="btn btn-danger btn-sm">
+                            <i class="fa fa-trash"></i>
+                          </a>
+                        </td>
+                      </tr>
+                    <?php endforeach; ?>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
   </div>
+  </main>
+</div>
 </div>
 
 <?php require APPROOT . '/views/admin/includes/footer.php' ?>
