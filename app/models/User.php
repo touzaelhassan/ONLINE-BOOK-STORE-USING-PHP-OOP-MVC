@@ -3,8 +3,6 @@
 class User
 {
 
-  public $db;
-
   public $id;
   public $name;
   public $email;
