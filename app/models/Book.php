@@ -27,4 +27,11 @@ class Book
       return false;
     }
   }
+
+  public function get_books()
+  {
+    $this->db->prepare("SELECT * FROM books");
+    $this->db->execute();
+    return $this->db->get_all();
+  }
 }

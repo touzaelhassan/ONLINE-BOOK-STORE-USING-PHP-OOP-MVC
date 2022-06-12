@@ -17,7 +17,7 @@ class Books extends Controller
     $data = [
       'books' => $books
     ];
-    $this->view('books/index', $data);
+    $this->view('admin/books/index', $data);
   }
 
   public function create()
