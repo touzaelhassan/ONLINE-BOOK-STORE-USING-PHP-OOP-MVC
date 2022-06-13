@@ -233,6 +233,15 @@ class Books extends Controller
     }
   }
 
+  public function show($id)
+  {
+    $book = $this->bookModel->get_book($id);
+    $data = [
+      'book' => $book
+    ];
+    $this->view('show', $data);
+  }
+
   public function delete($id)
   {
     $this->bookModel->id = $id;

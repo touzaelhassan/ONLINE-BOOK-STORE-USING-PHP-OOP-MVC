@@ -23,9 +23,13 @@
       <?php foreach ($data['books'] as $book) : ?>
         <div class="col-12 col-md-6 col-lg-3 book">
           <div class="card rounded-0">
-            <img class="card-img-top rounded-0" src="<?php echo URLROOT; ?>/images/books/<?php echo $book->image; ?>" alt="<?php echo $book->title; ?>">
+            <a href="<?php echo URLROOT; ?>/books/show/<?php echo $book->book_id; ?>">
+              <img class="card-img-top rounded-0" src="<?php echo URLROOT; ?>/images/books/<?php echo $book->image; ?>" alt="<?php echo $book->title; ?>">
+            </a>
             <div class="card-body text-center">
-              <h5 class="card-title book__title"><?php echo $book->title; ?></h5>
+              <a href="<?php echo URLROOT; ?>/books/show/<?php echo $book->book_id; ?>">
+                <h5 class="card-title book__title"><?php echo $book->title; ?></h5>
+              </a>
               <p class="card-text text-secondary m-0 author__name"><?php echo $book->author_name; ?></p>
               <div class="small-ratings">
                 <i class="fa fa-star text-warning"></i>
@@ -35,7 +39,7 @@
                 <i class="fa fa-star text-secondary"></i>
               </div>
               <p class="book__price">$<?php echo $book->price; ?></p>
-              <a href="<?php echo URLROOT; ?>/books/show/<?php echo $book->id; ?>" class="btn btn-success rounded-0">DETAILS</a>
+              <a href="<?php echo URLROOT; ?>/books/show/<?php echo $book->book_id; ?>" class="btn btn-success rounded-0">DETAILS</a>
             </div>
           </div>
         </div>
