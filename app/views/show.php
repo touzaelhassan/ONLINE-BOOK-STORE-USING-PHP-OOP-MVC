@@ -31,7 +31,7 @@
           <p><span class="text-secondary">Weight : </span><span>0.5 kg</span></p>
           <p><span class="text-secondary">Dimensions : </span><span>21.5 x 15.5 x 1.5 cm</span></p>
 
-          <a href="<?php echo URLROOT; ?>/books/index" class="btn btn-success rounded-0">ADD TO CART</a>
+          <a href="<?php echo URLROOT; ?>/carts/create/<?php echo $data['book']->book_id; ?>" class="btn btn-success rounded-0">ADD TO CART</a>
         </div>
       </div>
     </div>
