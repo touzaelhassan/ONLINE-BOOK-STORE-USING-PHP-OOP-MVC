@@ -54,6 +54,49 @@ header {
 .search__form button {
   border-radius: 0 !important;
 }
+/* Books Section */
+.books {
+  padding: 50px 0;
+}
+
+.books__title {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 50px;
+  text-transform: capitalize;
+}
+
+.books__title h2 {
+  font-family: 'Slabo 27px', serif;
+}
+
+.books__title i {
+  order: 2;
+}
+
+.author__name {
+  margin-bottom: 7px !important;
+}
+
+.book__price {
+  margin-top: 7px !important;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+@media screen and (min-width: 768px) {
+  .books {
+    padding: 100px 0;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .books__title {
+    margin-bottom: 70px;
+  }
+}
 
 /* End Home Page Section */
 

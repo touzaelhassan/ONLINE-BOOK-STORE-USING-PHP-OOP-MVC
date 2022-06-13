@@ -2,11 +2,18 @@
 
 class Home extends Controller
 {
+
+  public function __construct()
+  {
+    $this->bookModel = $this->model('Book');
+  }
+
   public function index()
   {
+    $books = $this->bookModel->get_books();
+
     $data = [
-      'title' => 'Home',
-      'description' => 'This is the home page'
+      'books' => $books
     ];
 
     $this->view('index', $data);
