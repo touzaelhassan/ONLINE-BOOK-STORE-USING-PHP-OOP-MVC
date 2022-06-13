@@ -23,47 +23,58 @@
           <div class="col">
             <div class="card">
               <div class="card-header d-flex justify-content-between">
-                <h4>Users</h4>
+                <h4>Books</h4>
                 <a href="<?php echo URLROOT; ?>/books/create" class="btn btn-success"><i class="fa-solid fa-plus"></i></a>
               </div>
               <div class="card-body">
-                <?php
 
-                echo "<pre>";
-                print_r($data['books']);
-                echo "</pre>";
-
-                ?>
-                <!-- <table class="table table-bordered">
-                  <thead>
-                    <tr>
-                      <th>#</th>
-                      <th>Name</th>
-                      <th>Email</th>
-                      <th>Update</th>
-                      <th>Delete</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <?php foreach ($data['authors'] as $author) : ?>
+                <div class="table-responsive">
+                  <table class="table table-bordered">
+                    <thead class="table-light">
                       <tr>
-                        <td><?php echo $author->id ?></td>
-                        <td><?php echo $author->name ?></td>
-                        <td><?php echo $author->email ?></td>
-                        <td>
-                          <a href="<?php echo URLROOT; ?>/authors/update/<?php echo $author->id ?>" class="btn btn-primary btn-sm">
-                            <i class="fa fa-pencil"></i>
-                          </a>
-                        </td>
-                        <td>
-                          <a href="<?php echo URLROOT; ?>/authors/delete/<?php echo $author->id ?>" class="btn btn-danger btn-sm">
-                            <i class="fa fa-trash"></i>
-                          </a>
-                        </td>
+                        <th>#</th>
+                        <th>Title</th>
+                        <th>Category</th>
+                        <th>Publisher</th>
+                        <th>Author</th>
+                        <th>Description</th>
+                        <th>Price</th>
+                        <th>Copies</th>
+                        <th>Image</th>
+                        <th>Upadate</th>
+                        <th>Delete</th>
                       </tr>
-                    <?php endforeach; ?>
-                  </tbody>
-                </table> -->
+                    </thead>
+                    <tbody>
+                      <?php foreach ($data['books'] as $book) : ?>
+                        <tr>
+                          <td><?php echo $book->book_id; ?></td>
+                          <td><?php echo $book->title; ?></td>
+                          <td><?php echo $book->category_name; ?></td>
+                          <td><?php echo $book->publisher_name; ?></td>
+                          <td><?php echo $book->author_name; ?></td>
+                          <td><?php echo $book->book_description; ?></td>
+                          <td><?php echo $book->price; ?></td>
+                          <td><?php echo $book->copies; ?></td>
+                          <td class="text-center">
+                            <img src="<?php echo URLROOT; ?>/images/books/<?php echo $book->image; ?>" alt="<?php echo $book->title; ?>" class="img-fluid" width="50">
+                          </td>
+                          <td class="text-center pt-3">
+                            <a href="<?php echo URLROOT; ?>/books/update/<?php echo $book->book_id; ?>" class="btn btn-primary btn-sm">
+                              <i class="fa-solid fa-pencil"></i>
+                            </a>
+                          </td>
+                          <td class="text-center pt-3">
+                            <a href="<?php echo URLROOT; ?>/books/delete/<?php echo $book->book_id; ?>" class="btn btn-danger btn-sm">
+                              <i class="fa-solid fa-trash"></i>
+                            </a>
+                          </td>
+                        </tr>
+                      <?php endforeach; ?>
+                    </tbody>
+                  </table>
+                </div>
+
               </div>
             </div>
           </div>

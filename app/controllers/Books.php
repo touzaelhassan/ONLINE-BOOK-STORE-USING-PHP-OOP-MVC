@@ -14,9 +14,11 @@ class Books extends Controller
   public function index()
   {
     $books = $this->bookModel->get_books();
+
     $data = [
       'books' => $books
     ];
+
     $this->view('admin/books/index', $data);
   }
 
@@ -30,7 +32,7 @@ class Books extends Controller
         'author_id' => $_POST['author_id'],
         'title' => $_POST['title'],
         'description' => $_POST['description'],
-        'image' => $_POST['image'],
+        'image' => $_FILES['image']['name'],
         'price' => $_POST['price'],
         'copies' => $_POST['copies'],
 
@@ -94,11 +96,13 @@ class Books extends Controller
         $this->bookModel->image = $data['image'];
         $this->bookModel->price = $data['price'];
         $this->bookModel->copies = $data['copies'];
-
         $this->bookModel->add_book();
+
+        move_uploaded_file($_FILES['image']['tmp_name'], 'images/books/' . $data['image']);
+
         header('Location: ' . URLROOT . '/books');
       } else {
-        $this->view('books/create', $data);
+        $this->view('admin/books/create', $data);
       }
     } else {
 
@@ -118,5 +122,121 @@ class Books extends Controller
       ];
       $this->view('admin/books/create', $data);
     }
+  }
+
+  public function update($id)
+  {
+    if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+
+      $data = [
+        'category_id' => $_POST['category_id'],
+        'publisher_id' => $_POST['publisher_id'],
+        'author_id' => $_POST['author_id'],
+        'title' => $_POST['title'],
+        'description' => $_POST['description'],
+        'image' => $_FILES['image']['name'],
+        'price' => $_POST['price'],
+        'copies' => $_POST['copies'],
+
+        'category_id_error' => '',
+        'publisher_id_error' => '',
+        'author_id_error' => '',
+        'title_error' => '',
+        'description_error' => '',
+        'image_error' => '',
+        'price_error' => '',
+        'copies_error' => '',
+      ];
+
+      if (empty($data['category_id'])) {
+        $data['category_id_error'] = 'Category is required';
+      }
+
+      if (empty($data['publisher_id'])) {
+        $data['publisher_id_error'] = 'Publisher is required';
+      }
+
+      if (empty($data['author_id'])) {
+        $data['author_id_error'] = 'Author is required';
+      }
+
+      if (empty($data['title'])) {
+        $data['title_error'] = 'Title is required';
+      }
+
+      if (empty($data['description'])) {
+        $data['description_error'] = 'Description is required';
+      }
+
+      if (empty($data['image'])) {
+        $data['image_error'] = 'Image is required';
+      }
+
+      if (empty($data['price'])) {
+        $data['price_error'] = 'Price is required';
+      }
+
+      if (empty($data['copies'])) {
+        $data['copies_error'] = 'Copies is required';
+      }
+
+      if (
+        empty($data['category_id_error']) &&
+        empty($data['publisher_id_error']) &&
+        empty($data['author_id_error']) &&
+        empty($data['title_error']) &&
+        empty($data['description_error']) &&
+        empty($data['image_error']) &&
+        empty($data['price_error']) &&
+        empty($data['copies_error'])
+      ) {
+        $this->bookModel->category_id = $data['category_id'];
+        $this->bookModel->publisher_id = $data['publisher_id'];
+        $this->bookModel->author_id = $data['author_id'];
+        $this->bookModel->title = $data['title'];
+        $this->bookModel->description = $data['description'];
+        $this->bookModel->image = $data['image'];
+        $this->bookModel->price = $data['price'];
+        $this->bookModel->copies = $data['copies'];
+        $this->bookModel->update_book($id);
+
+        move_uploaded_file($_FILES['image']['tmp_name'], 'images/books/' . $data['image']);
+
+        header('Location: ' . URLROOT . '/books');
+      } else {
+        $this->view('admin/books/update', $data);
+      }
+    } else {
+
+      $book = $this->bookModel->get_book($id);
+
+      $authors = $this->authorModel->get_authors();
+      $categories = $this->categoryModel->get_categories();
+      $publishers = $this->publisherModel->get_publishers();
+
+      $data = [
+        'id' => $id,
+        'category_id' => $book->category_id,
+        'publisher_id' => $book->publisher_id,
+        'author_id' => $book->author_id,
+        'title' => $book->title,
+        'book_description' => $book->book_description,
+        'image' => $book->image,
+        'price' => $book->price,
+        'copies' => $book->copies,
+        'categories' => $categories,
+        'publishers' => $publishers,
+        'authors' => $authors,
+      ];
+
+      $this->view('admin/books/update', $data);
+    }
+  }
+
+  public function delete($id)
+  {
+    $this->bookModel->id = $id;
+    $this->bookModel->delete_book();
+    header('Location: ' . URLROOT . '/books');
   }
 }
