@@ -45,6 +45,13 @@
 
             <?php if ($_SESSION["user_role"] === 1) : ?>
               <ul class="navbar-nav ml-auto">
+                <li class="nav-item navbar__cart__item">
+                  <a href="<?php echo URLROOT; ?>/carts/index/<?php echo $_SESSION['user_id'] ?>" class="nav-link navbar__cart__link">
+                    <i class="fa-solid fa-bag-shopping fs-4 navbar__cart__icon"></i>
+                    <span class="navbar__cart__number"><?php echo count($data['carts']) ?></span>
+                  </a>
+                </li>
+
                 <li class="nav-item dropdown">
                   <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                     Admin
@@ -57,10 +64,10 @@
               </ul>
             <?php else : ?>
               <ul class="navbar-nav ml-auto">
-                <li class="nav-item">
-                  <a href="#" class="nav-link">
-                    <span>Cart</span>
-                    <span>0</span>
+                <li class="nav-item navbar__cart__item">
+                  <a href="<?php echo URLROOT; ?>/carts/index/<?php echo $_SESSION['user_id'] ?>" class="nav-link navbar__cart__link">
+                    <i class="fa-solid fa-bag-shopping fs-4 navbar__cart__icon"></i>
+                    <span class="navbar__cart__number"><?php echo count($data['carts']) ?></span>
                   </a>
                 </li>
                 <li class="nav-item dropdown">

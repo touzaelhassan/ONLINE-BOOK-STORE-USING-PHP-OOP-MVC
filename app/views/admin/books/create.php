@@ -31,7 +31,7 @@
 
                   <div class="form__content row">
 
-                    <div class="col-6">
+                    <div class="col-12 col-md-6">
                       <div class="form-group mb-3">
                         <label for="title" class="mb-2">Title : <sup class="text-danger">*</sup></label>
                         <input type="text" name="title" class="form-control form-control-lg <?php echo (!empty($data['title_error'])) ? 'is-invalid' : ''; ?>" value="<?php echo $data['title']; ?>">
@@ -54,7 +54,7 @@
                       </div>
                     </div>
 
-                    <div class="col-6">
+                    <div class="col-12 col-md-6">
                       <div class="form-group mb-3">
                         <label for="copies" class="mb-2">Copies : <sup class="text-danger">*</sup></label>
                         <input type="number" name="copies" class="form-control form-control-lg <?php echo (!empty($data['copies_error'])) ? 'is-invalid' : ''; ?>" value="<?php echo $data['copies']; ?>">

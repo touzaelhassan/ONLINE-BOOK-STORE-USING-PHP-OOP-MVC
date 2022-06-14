@@ -26,6 +26,29 @@ header {
   justify-content: space-between;
 }
 
+.navbar__cart__link {
+  position: relative;
+}
+
+.navbar__cart__icon {
+  font-size: 18px;
+}
+
+.navbar__cart__number {
+  position: absolute;
+  top: 25px;
+  right: -0px;
+  display: block;
+  justify-content: center;
+  align-items: center;
+  border-radius: 100%;
+  padding: 2px 7px;
+  color: #fff;
+  background-color: red;
+  font-size: 13px;
+  font-weight: bold;
+}
+
 /* End Header Section */
 
 /* Start Home Page Section */
@@ -44,6 +67,8 @@ header {
 }
 
 .hero__content {
+  padding: 0 40px;
+  text-align: center;
   width: 500px;
 }
 
@@ -54,6 +79,13 @@ header {
 
 .search__form button {
   border-radius: 0 !important;
+}
+
+@media screen and (min-width: 768px) {
+  .hero__content {
+    padding: 0;
+    text-align: start;
+  }
 }
 /* Books Section */
 .books {
@@ -113,6 +145,18 @@ header {
 }
 
 /* End Single Book Page */
+
+/* Start Carts Page */
+.carts {
+  padding: 50px 0;
+}
+
+@media screen and (min-width: 768px) {
+  .carts {
+    padding: 100px 0;
+  }
+}
+/* End Carts Page */
 
 /* Start Signup Page */
 .signup {

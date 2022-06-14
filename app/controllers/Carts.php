@@ -33,4 +33,21 @@ class Carts extends Controller
 
     header('Location: ' . URLROOT . '/carts/index/' . $_SESSION["user_id"]);
   }
+
+  public function delete($id)
+  {
+    $this->cartModel->id = $id;
+    $this->cartModel->delete_cart();
+
+    header('Location: ' . URLROOT . '/carts/index/' . $_SESSION["user_id"]);
+  }
+
+  public function update($id)
+  {
+    $this->cartModel->id = $id;
+    $this->cartModel->copies = $_POST['cart_number'];
+    $this->cartModel->update_cart();
+
+    header('Location: ' . URLROOT . '/carts/index/' . $_SESSION["user_id"]);
+  }
 }

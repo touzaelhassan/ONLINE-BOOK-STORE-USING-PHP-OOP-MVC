@@ -40,4 +40,9 @@ class Database
   {
     return $this->stmt = $this->stmt->fetch(PDO::FETCH_OBJ);
   }
+
+  public function last_id()
+  {
+    return $this->connection->lastInsertId();
+  }
 }

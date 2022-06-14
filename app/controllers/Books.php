@@ -9,14 +9,18 @@ class Books extends Controller
     $this->authorModel = $this->model('Author');
     $this->categoryModel = $this->model('Category');
     $this->publisherModel = $this->model('Publisher');
+    $this->cartModel = $this->model('Cart');
   }
 
   public function index()
   {
     $books = $this->bookModel->get_books();
+    $carts = $this->cartModel->get_carts($_SESSION['user_id']);
+
 
     $data = [
-      'books' => $books
+      'books' => $books,
+      'carts' => $carts
     ];
 
     $this->view('admin/books/index', $data);
@@ -236,8 +240,11 @@ class Books extends Controller
   public function show($id)
   {
     $book = $this->bookModel->get_book($id);
+    $carts = $this->cartModel->get_carts($_SESSION['user_id']);
+
     $data = [
-      'book' => $book
+      'book' => $book,
+      'carts' => $carts,
     ];
     $this->view('show', $data);
   }

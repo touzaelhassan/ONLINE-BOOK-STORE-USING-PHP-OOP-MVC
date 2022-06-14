@@ -24,6 +24,7 @@ class User
   {
     $this->db->prepare("INSERT INTO users (name, email, password) VALUES ('$this->name', '$this->email', '$this->password')");
     if ($this->db->execute()) {
+      $this->id = $this->db->last_id();
       return true;
     } else {
       return false;
