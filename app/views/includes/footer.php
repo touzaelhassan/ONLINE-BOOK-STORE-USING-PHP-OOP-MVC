@@ -1,4 +1,4 @@
-<footer class="text-center text-lg-start bg-light text-muted">
+<footer class="text-center text-lg-start bg-light text-muted border-0 pt-4">
 
   <section class="">
     <div class="container text-center text-md-start mt-5">

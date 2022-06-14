@@ -199,6 +199,47 @@ header {
   }
 }
 
+.newsletter {
+  padding: 70px 0;
+  background-color: #fff;
+  font-family: 'Slabo 27px', serif;
+}
+
+.newsletter__form {
+  margin-top: 30px;
+  display: flex;
+  justify-content: center;
+}
+
+.newsletter__form input {
+  border-radius: 0 !important;
+  width: 400px;
+  padding: 12px;
+  border: 1px solid rgb(216, 216, 216);
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  color: #444;
+  outline: none;
+}
+
+.newsletter__form button {
+  border-radius: 0 !important;
+  border: 1px solid #eee;
+  padding: 10px;
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  color: #fff;
+  background-color: green;
+}
+
+@media screen and (min-width: 768px) {
+  .newsletter {
+    padding: 140px 0;
+  }
+}
+
 /* End Home Page Section */
 
 /* Start Single Book Page */
