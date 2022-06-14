@@ -24,9 +24,10 @@ class Cart
     }
   }
 
+
   public function get_carts($id)
   {
-    $this->db->prepare("SELECT * FROM user_book WHERE user_id = $id");
+    $this->db->prepare("SELECT user_book.*, books.*, user_book.id as `cart_id`, user_book.copies as `cart_copies`, user_book.price as `cart_price`, books.id as `book_id`, books.price as `book_price`, books.copies as `book_copies`  FROM user_book INNER JOIN books ON books.id = user_book.book_id WHERE user_book.user_id = $id");
     $this->db->execute();
     return $this->db->get_all();
   }
