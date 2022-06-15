@@ -49,6 +49,18 @@ header {
   font-weight: bold;
 }
 
+.dropdown__menu.show {
+  display: flex;
+  flex-wrap: wrap;
+  width: 300px;
+  padding: 20px;
+  border-radius: 0;
+}
+
+.dropdown__menu.show li {
+  width: 50%;
+}
+
 /* End Header Section */
 
 /* Start Home Page Section */

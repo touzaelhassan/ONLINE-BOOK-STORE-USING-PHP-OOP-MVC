@@ -17,10 +17,9 @@ class Books extends Controller
     $books = $this->bookModel->get_books();
     $carts = $this->cartModel->get_carts($_SESSION['user_id']);
 
-
     $data = [
       'books' => $books,
-      'carts' => $carts
+      'carts' => $carts,
     ];
 
     $this->view('admin/books/index', $data);
@@ -254,6 +253,21 @@ class Books extends Controller
     $this->bookModel->id = $id;
     $this->bookModel->delete_book();
     header('Location: ' . URLROOT . '/books');
+  }
+
+  public function category($category_id)
+  {
+    $carts = $this->cartModel->get_carts($_SESSION['user_id']);
+    $books = $this->bookModel->get_books_by_category($category_id);
+    $categories = $this->categoryModel->get_categories();
+
+    $data = [
+      'carts' => $carts,
+      'books' => $books,
+      'categories' => $categories,
+    ];
+
+    $this->view('category', $data);
   }
 
   public function search()
