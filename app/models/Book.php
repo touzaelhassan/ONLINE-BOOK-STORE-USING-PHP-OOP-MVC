@@ -30,7 +30,7 @@ class Book
 
   public function get_books()
   {
-    $this->db->prepare("SELECT books.*, categories.*, publishers.*, authors.*, books.id as `book_id`, books.description as `book_description`,categories.id as `category_id`, categories.name as `category_name`, categories.description as `category_description`,publishers.id as `publisher_id`, publishers.name as `publisher_name`, publishers.address as `publisher_address`,authors.id as `author_id`, authors.name as `author_name` FROM books INNER JOIN categories ON categories.id = books.category_id INNER JOIN publishers ON publishers.id = books.publisher_id INNER JOIN authors ON authors.id = books.author_id
+    $this->db->prepare("SELECT books.*, categories.*, publishers.*, authors.*, books.id as `book_id`, books.description as `book_description`,categories.id as `category_id`, categories.name as `category_name`, categories.description as `category_description`,publishers.id as `publisher_id`, publishers.name as `publisher_name`, publishers.address as `publisher_address`,authors.id as `author_id`, authors.name as `author_name` FROM books INNER JOIN categories ON categories.id = books.category_id INNER JOIN publishers ON publishers.id = books.publisher_id INNER JOIN authors ON authors.id = books.author_id LIMIT 6
     ");
     $this->db->execute();
     return $this->db->get_all();
@@ -64,5 +64,12 @@ class Book
     } else {
       return false;
     }
+  }
+
+  public function search_books($search)
+  {
+    $this->db->prepare("SELECT books.*, categories.*, publishers.*, authors.*, books.id as `book_id`, books.description as `book_description`,categories.id as `category_id`, categories.name as `category_name`, categories.description as `category_description`,publishers.id as `publisher_id`, publishers.name as `publisher_name`, publishers.address as `publisher_address`,authors.id as `author_id`, authors.name as `author_name` FROM books INNER JOIN categories ON categories.id = books.category_id INNER JOIN publishers ON publishers.id = books.publisher_id INNER JOIN authors ON authors.id = books.author_id WHERE books.title LIKE '%$search%' OR books.description LIKE '%$search%' OR categories.name LIKE '%$search%' OR publishers.name LIKE '%$search%' OR authors.name LIKE '%$search%'");
+    $this->db->execute();
+    return $this->db->get_all();
   }
 }

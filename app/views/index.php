@@ -6,8 +6,8 @@
     <p class="text-white mt-3 mb-5">
       Lorem ipsum dolor sit amet consectetur adipisicn elit ration reprehend ipsam esse nostrum dolor odit vel adipisci eligendi eveniet dolor sitam amet perferendis ipsum dolon.
     </p>
-    <form class="d-flex search__form" role="search">
-      <input class="form-control me-2 py-2" type="search" placeholder="Find a book by title..." aria-label="Search">
+    <form action="<?php echo URLROOT; ?>/books/search" method="POST" class="d-flex search__form" role="search">
+      <input class="form-control me-2 py-2" type="search" name="search" placeholder="Find a book by title..." aria-label="Search">
       <button class="btn btn-success" type="submit">Search</button>
     </form>
   </div>
@@ -19,9 +19,9 @@
       <i class="fa-solid fa-down-long"></i>
       <h4>Discover your next book</h4>
     </div>
-    <div class="row g-5 books__content">
+    <div class="row g-5 justify-content-center books__content">
       <?php foreach ($data['books'] as $book) : ?>
-        <div class="col-12 col-md-6 col-lg-3 book">
+        <div class="col-12 col-md-6 col-lg-4 book">
           <div class="card rounded-0">
             <a href="<?php echo URLROOT; ?>/books/show/<?php echo $book->book_id; ?>">
               <img class="card-img-top rounded-0" src="<?php echo URLROOT; ?>/images/books/<?php echo $book->image; ?>" alt="<?php echo $book->title; ?>">

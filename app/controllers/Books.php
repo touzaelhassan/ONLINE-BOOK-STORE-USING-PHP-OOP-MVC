@@ -255,4 +255,24 @@ class Books extends Controller
     $this->bookModel->delete_book();
     header('Location: ' . URLROOT . '/books');
   }
+
+  public function search()
+  {
+    if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+
+      $search = $_POST['search'];
+      $books = $this->bookModel->search_books($search);
+      $carts = $this->cartModel->get_carts($_SESSION['user_id']);
+
+
+      $data = [
+        'books' => $books,
+        'carts' => $carts,
+      ];
+
+      $this->view('search', $data);
+    } else {
+      header('Location: ' . URLROOT . '/books');
+    }
+  }
 }
