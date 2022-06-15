@@ -1,37 +1,53 @@
 <?php require APPROOT . '/views/includes/header.php' ?>
 
-<section class="books">
+<section class="books p-5">
   <div class="container">
-    <div class="books__title">
+    <div class="books__title mb-4">
       <i class="fa-solid fa-down-long"></i>
       <h4>Search Results</h4>
     </div>
-    <div class="row g-5 books__content justify-content-center">
-      <?php foreach ($data['books'] as $book) : ?>
-        <div class="col-12 col-md-6 col-lg-3 book">
-          <div class="card rounded-0">
-            <a href="<?php echo URLROOT; ?>/books/show/<?php echo $book->book_id; ?>">
-              <img class="card-img-top rounded-0" src="<?php echo URLROOT; ?>/images/books/<?php echo $book->image; ?>" alt="<?php echo $book->title; ?>">
-            </a>
-            <div class="card-body text-center">
+    <?php if (count($data['books']) > 0) : ?>
+
+      <div class="row g-5 books__content justify-content-center">
+        <?php foreach ($data['books'] as $book) : ?>
+          <div class="col-12 col-md-6 col-lg-3 book">
+            <div class="card rounded-0">
               <a href="<?php echo URLROOT; ?>/books/show/<?php echo $book->book_id; ?>">
-                <h5 class="card-title book__title"><?php echo $book->title; ?></h5>
+                <img class="card-img-top rounded-0" src="<?php echo URLROOT; ?>/images/books/<?php echo $book->image; ?>" alt="<?php echo $book->title; ?>">
               </a>
-              <p class="card-text text-secondary m-0 author__name"><?php echo $book->author_name; ?></p>
-              <div class="small-ratings book__stars">
-                <i class="fa fa-star text-warning"></i>
-                <i class="fa fa-star text-warning"></i>
-                <i class="fa fa-star text-warning"></i>
-                <i class="fa fa-star text-warning"></i>
-                <i class="fa fa-star" style="color: #e1e4e8;"></i>
+              <div class="card-body text-center">
+                <a href="<?php echo URLROOT; ?>/books/show/<?php echo $book->book_id; ?>">
+                  <h5 class="card-title book__title"><?php echo $book->title; ?></h5>
+                </a>
+                <p class="card-text text-secondary m-0 author__name"><?php echo $book->author_name; ?></p>
+                <div class="small-ratings book__stars">
+                  <i class="fa fa-star text-warning"></i>
+                  <i class="fa fa-star text-warning"></i>
+                  <i class="fa fa-star text-warning"></i>
+                  <i class="fa fa-star text-warning"></i>
+                  <i class="fa fa-star" style="color: #e1e4e8;"></i>
+                </div>
+                <p class="book__price">$<?php echo $book->price; ?></p>
+                <a href="<?php echo URLROOT; ?>/books/show/<?php echo $book->book_id; ?>" class="btn  rounded-0 px-5 py-2 btn__details">DETAILS</a>
               </div>
-              <p class="book__price">$<?php echo $book->price; ?></p>
-              <a href="<?php echo URLROOT; ?>/books/show/<?php echo $book->book_id; ?>" class="btn  rounded-0 px-5 py-2 btn__details">DETAILS</a>
             </div>
           </div>
+        <?php endforeach; ?>
+      </div>
+
+    <?php else : ?>
+
+      <div class="no__results">
+        <div class="no__results__content">
+          <i class="fa-brands fa-searchengin"></i>
+          <h4>No Results Found</h4>
+          <p class="text-secondary">We have searched more than 300 books we did not find any books for your search</p>
+          <a href="<?php echo URLROOT; ?>">SEARCH AGAIN</a>
         </div>
-      <?php endforeach; ?>
-    </div>
+      </div>
+
+    <?php endif; ?>
+
   </div>
 </section>
 

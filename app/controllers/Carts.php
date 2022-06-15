@@ -11,9 +11,11 @@ class Carts extends Controller
   public function index($id)
   {
     $carts = $this->cartModel->get_carts($id);
+    $books = $this->bookModel->get_books();
 
     $data = [
-      'carts' => $carts
+      'carts' => $carts,
+      'books' => $books
     ];
 
     $this->view('carts/index', $data);

@@ -58,6 +58,7 @@ header {
   justify-content: center;
   align-items: center;
   height: 80vh;
+  background-attachment: fixed;
   background-image: url('../images/hero.jpg');
   background-size: cover;
   background-position: center;
@@ -249,6 +250,56 @@ header {
 
 /* End Home Page Section */
 
+/* Start Single Page Book */
+.book__description {
+  color: #666;
+  letter-spacing: 1px;
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 1.6;
+}
+/* End Single Page Book */
+
+/* Start Search Page */
+.no__results {
+  margin-bottom: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.no__results__content {
+  border: 1px solid #eee;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.no__results__content h2 {
+  font-family: 'Slabo 27px', serif;
+}
+
+.no__results__content i {
+  font-size: 50px;
+}
+
+.no__results__content a {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 10px 20px;
+  border: 2px solid green;
+  color: #fff;
+  background-color: green;
+}
+
+.no__results__content a:hover {
+  color: green;
+  background-color: #fff;
+}
+/* End Search Page */
+
 /* Start Single Book Page */
 .single__book {
   padding: 50px 0;
@@ -267,9 +318,19 @@ header {
   padding: 50px 0;
 }
 
+.related__books {
+  padding-bottom: 50px;
+  /* background-color: #f1f4f7; */
+  border-bottom: 1px solid #eee;
+}
+
 @media screen and (min-width: 768px) {
   .carts {
-    padding: 100px 0;
+    padding-bottom: 100px 0;
+  }
+
+  .related__books {
+    padding-bottom: 100px;
   }
 }
 /* End Carts Page */
