@@ -79,6 +79,7 @@ header {
 
 .search__form button {
   border-radius: 0 !important;
+  padding: 13px 25px;
 }
 
 @media screen and (min-width: 768px) {
@@ -316,6 +317,7 @@ header {
   color: #fff;
   background-color: green;
 }
+
 .login-success__content a:hover {
   color: green;
   background-color: #fff;
@@ -325,6 +327,6 @@ header {
 
 /* Start Footer Section */
 footer {
-  border-top: 1px solid rgb(225, 225, 225);
+  background-color: #f1f4f7;
 }
 /* End Footer Section */

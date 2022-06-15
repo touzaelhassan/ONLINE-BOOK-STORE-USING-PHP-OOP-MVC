@@ -152,6 +152,8 @@ class Users extends Controller
           $data['password_error'] = 'Invalid password';
           $this->view('users/login', $data);
         }
+      } else {
+        $this->view('users/login', $data);
       }
     } else {
 
