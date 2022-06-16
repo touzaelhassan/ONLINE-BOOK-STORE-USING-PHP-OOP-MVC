@@ -342,7 +342,7 @@ header {
   }
 
   .related__books {
-    padding-bottom: 100px;
+    padding: 100px 0;
   }
 }
 /* End Carts Page */

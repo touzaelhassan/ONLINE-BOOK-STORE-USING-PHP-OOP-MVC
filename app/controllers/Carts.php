@@ -52,4 +52,11 @@ class Carts extends Controller
 
     header('Location: ' . URLROOT . '/carts/index/' . $_SESSION["user_id"]);
   }
+
+  public function updatebought()
+  {
+    $this->cartModel->user_id = $_SESSION["user_id"];
+    $this->cartModel->bought = 1;
+    $this->cartModel->update_bought();
+  }
 }
