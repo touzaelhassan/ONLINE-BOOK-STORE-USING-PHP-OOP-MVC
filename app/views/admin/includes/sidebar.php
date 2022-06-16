@@ -4,43 +4,43 @@
       <li class="nav-item">
         <a class="nav-link active" aria-current="page" href="<?php echo URLROOT; ?>/admin">
           <i class="fa-solid fa-house-chimney"></i>
-          Dashboard
+          <span class="ms-1 fs-6">Dashboard</span>
         </a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="<?php echo URLROOT; ?>/categories">
-          <i class="fa-solid fa-house-chimney"></i>
-          Categories
+          <i class="fas fa-calendar"></i>
+          <span class="ms-1 fs-6">Categories</span>
         </a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="<?php echo URLROOT; ?>/publishers">
-          <i class="fa-solid fa-house-chimney"></i>
-          Publishers
+          <i class="fa-solid fa-share-nodes"></i>
+          <span class="ms-1 fs-6">Publishers</span>
         </a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="<?php echo URLROOT; ?>/authors">
-          <i class="fa-solid fa-house-chimney"></i>
-          Authors
+          <i class="fa-solid fa-feather-pointed"></i>
+          <span class="ms-1 fs-6">Authors</span>
         </a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="<?php echo URLROOT; ?>/books">
-          <i class="fa-solid fa-house-chimney"></i>
-          Books
+          <i class="fa-solid fa-book"></i>
+          <span class="ms-1 fs-6">Books</span>
         </a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="<?php echo URLROOT; ?>/users">
-          <i class="fa-solid fa-house-chimney"></i>
-          Users
+          <i class="fa-solid fa-user"></i>
+          <span class="ms-1 fs-6">Users</span>
         </a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="<?php echo URLROOT; ?>/orders">
-          <i class="fa-solid fa-house-chimney"></i>
-          Orders
+          <i class="fa-solid fa-cart-shopping"></i>
+          <span class="ms-1 fs-6">Orders</span>
         </a>
       </li>
     </ul>

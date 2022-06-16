@@ -80,7 +80,7 @@
                   </a>
                   <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                     <li><a class="dropdown-item" href="#">Profile</a></li>
-                    <li><a class="dropdown-item" href="#">My Books</a></li>
+                    <li><a class="dropdown-item" href="<?php echo URLROOT; ?>/books/mybooks/<?php echo $_SESSION['user_id'] ?>">My Books</a></li>
                     <li><a class="dropdown-item" href="<?php echo URLROOT; ?>/users/logout">Logout</a></li>
                   </ul>
                 </li>

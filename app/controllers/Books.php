@@ -272,6 +272,24 @@ class Books extends Controller
     $this->view('category', $data);
   }
 
+  public function mybooks($user_id)
+  {
+    $carts = $this->cartModel->get_carts($_SESSION['user_id']);
+    $books = $this->cartModel->get_cart_by_user_id($user_id);
+    $categories = $this->categoryModel->get_categories();
+
+
+    $data = [
+      'carts' => $carts,
+      'books' => $books,
+      'categories' => $categories,
+    ];
+
+    $this->view('mybooks', $data);
+  }
+
+
+
   public function search()
   {
     if ($_SERVER['REQUEST_METHOD'] == 'POST') {
