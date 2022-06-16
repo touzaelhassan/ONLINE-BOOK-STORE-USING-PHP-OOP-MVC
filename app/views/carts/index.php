@@ -117,9 +117,6 @@
   </div>
 <?php endif; ?>
 
-
-
-
 <!-- Replace "test" with your own sandbox Business account app client ID -->
 <script src="https://www.paypal.com/sdk/js?client-id=AbODSZBEHxL5og2_dTJIEmxW0wWqujzl2F2MIddFbfUtv4-wBe4VOjOfGKSIx0AvXi-zgX4KrmganHrJ&currency=USD"></script>
 <!-- Set up a container element for the button -->

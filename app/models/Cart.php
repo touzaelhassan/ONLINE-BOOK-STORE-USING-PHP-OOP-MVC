@@ -34,7 +34,7 @@ class Cart
 
   public function top__selling__books()
   {
-    $this->db->prepare("SELECT user_book.*, books.*, user_book.id as `cart_id`, user_book.copies as `cart_copies`, user_book.price as `cart_price`, books.id as `book_id`, books.price as `book_price`, books.copies as `book_copies`  FROM user_book INNER JOIN books ON books.id = user_book.book_id WHERE user_book.bought = 1");
+    $this->db->prepare("SELECT user_book.*, books.*, user_book.id as `cart_id`, user_book.copies as `cart_copies`, user_book.price as `cart_price`, books.id as `book_id`, books.price as `book_price`, books.copies as `book_copies`  FROM user_book INNER JOIN books ON books.id = user_book.book_id WHERE user_book.bought = 1 LIMIT 3");
     $this->db->execute();
     return $this->db->get_all();
   }
