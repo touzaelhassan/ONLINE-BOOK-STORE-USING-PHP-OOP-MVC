@@ -26,7 +26,7 @@
                 <td>
                   <button type="submit" form="cart__form<?php echo $cart->cart_id; ?>" class="btn btn-success btn-sm">Apply</button>
                 </td>
-                <td><?php echo $cart->cart_price * $cart->cart_copies; ?></td>
+                <td class="book-price"><?php echo $cart->cart_price * $cart->cart_copies; ?></td>
                 <td><?php echo $cart->cart_price; ?></td>
                 <td>
                   <form action="<?php echo URLROOT; ?>/carts/update/<?php echo $cart->cart_id; ?>" method="POST" id="cart__form<?php echo $cart->cart_id; ?>">
@@ -56,7 +56,9 @@
     <div class="container">
       <div class="row payment__content">
         <div class="col-9 payment__amount">
-          <span class="amount">10</span> <span>USD</span>
+          <div class="payment__amount__content">
+            <span class="payment__amount__text">TOTAL : </span> <span class="payment__amount__price"></span> <span>USD</span>
+          </div>
         </div>
         <div class="col-3 payment__buttons">
           <div id="paypal-button-container"></div>
@@ -106,7 +108,13 @@
 
   </section>
 <?php else : ?>
-  <h1>Your Cart is Empty</h1>
+  <div class="login-success cart">
+    <div class="login-success__content">
+      <i class="fas fa-check-double"></i>
+      <h4>Your Cart is Empty</h4>
+      <a href="<?php echo URLROOT; ?>">HOME</a>
+    </div>
+  </div>
 <?php endif; ?>
 
 
@@ -122,7 +130,7 @@
       return actions.order.create({
         purchase_units: [{
           amount: {
-            value: document.querySelector('.amount').innerHTML
+            value: document.querySelector('.payment__amount__price').innerHTML
           }
         }]
       });

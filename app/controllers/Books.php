@@ -240,10 +240,12 @@ class Books extends Controller
   {
     $book = $this->bookModel->get_book($id);
     $carts = $this->cartModel->get_carts($_SESSION['user_id']);
+    $categories = $this->categoryModel->get_categories();
 
     $data = [
       'book' => $book,
       'carts' => $carts,
+      'categories' => $categories,
     ];
     $this->view('show', $data);
   }

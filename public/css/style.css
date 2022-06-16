@@ -330,9 +330,31 @@ header {
   padding: 50px 0;
 }
 
+.payment__amount {
+  display: flex;
+  justify-content: start;
+  align-items: start;
+}
+
+.payment__amount__content {
+  padding: 20px;
+  border: 2px solid #eee;
+  color: #444;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+
+.payment__amount__text {
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.payment__amount__price {
+  font-size: 18px;
+  font-weight: 600;
+}
+
 .related__books {
   padding-bottom: 50px;
-  /* background-color: #f1f4f7; */
   border-bottom: 1px solid #eee;
 }
 
@@ -374,6 +396,10 @@ header {
   justify-content: center;
   align-items: center;
   height: 100vh;
+}
+
+.cart {
+  height: 63vh !important;
 }
 
 .login-success__content {
