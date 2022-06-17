@@ -134,9 +134,21 @@ header {
 }
 
 .book__price {
-  margin-top: 7px !important;
-  font-size: 18px;
+  font-size: 15px;
   font-weight: bold;
+}
+
+.card__footer {
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.card__footer p {
+  margin: 0;
+  padding: 7px 25px;
+  border: 2px solid #eee;
 }
 
 .btn__details {
@@ -145,6 +157,7 @@ header {
   color: #444;
   border: 1px solid rgb(213, 210, 210);
   background-color: #f1f4f7;
+  font-size: 14px;
 }
 
 @media screen and (min-width: 768px) {

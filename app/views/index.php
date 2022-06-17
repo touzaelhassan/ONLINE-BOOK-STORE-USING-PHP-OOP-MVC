@@ -38,8 +38,10 @@
                 <i class="fa fa-star text-warning"></i>
                 <i class="fa fa-star" style="color: #e1e4e8;"></i>
               </div>
-              <p class="book__price">$<?php echo $book->price; ?></p>
-              <a href="<?php echo URLROOT; ?>/books/show/<?php echo $book->book_id; ?>" class="btn  rounded-0 px-5 py-2 btn__details">DETAILS</a>
+              <div class="card__footer">
+                <p class="book__price text-muted">$<?php echo $book->price; ?></p>
+                <a href="<?php echo URLROOT; ?>/books/show/<?php echo $book->book_id; ?>" class="btn  rounded-0  btn__details">DETAILS</a>
+              </div>
             </div>
           </div>
         </div>
