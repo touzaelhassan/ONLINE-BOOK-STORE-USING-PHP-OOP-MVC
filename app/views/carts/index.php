@@ -30,11 +30,7 @@
                 <td><?php echo $cart->cart_price; ?></td>
                 <td>
                   <form action="<?php echo URLROOT; ?>/carts/update/<?php echo $cart->cart_id; ?>" method="POST" id="cart__form<?php echo $cart->cart_id; ?>">
-                    <select name="cart_number" id="cart_number" data-id="<?php echo $cart->cart_id; ?>" class="cart_number">
-                      <?php for ($i = 1; $i <= 5; $i++) : ?>
-                        <option value="<?php echo $i; ?>" <?php if ($cart->cart_copies == $i) echo 'selected'; ?>><?php echo $i; ?></option>
-                      <?php endfor; ?>
-                    </select>
+                    <input type="number" name="cart_number" class="cart_number" id="cart_number" data-id="<?php echo $cart->cart_id; ?>" value="<?php echo $cart->cart_copies ?>" style="width:40px">
                   </form>
                 </td>
                 <td><?php echo $cart->title; ?></td>

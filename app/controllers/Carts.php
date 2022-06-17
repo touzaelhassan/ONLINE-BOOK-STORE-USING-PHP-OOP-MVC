@@ -49,6 +49,7 @@ class Carts extends Controller
 
   public function update($id)
   {
+
     $this->cartModel->id = $id;
     $this->cartModel->copies = $_POST['cart_number'];
     $this->cartModel->update_cart();

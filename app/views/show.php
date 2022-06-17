@@ -20,20 +20,17 @@
             <i class="fa fa-star text-secondary"></i>
           </div>
           <p class="book__price">$<?php echo $data['book']->price; ?></p>
-          <!-- <p class="book__description"><?php // echo $data['book']->book_description; 
-                                            ?></p> -->
-          <p class="book__description">Thinking outside the box is a metaphor m that means to think differently from a new perspective This phrase often refers to creative thinking. This term is thought m to derive from management consultants in the 1970s and 1980s challenging their clients to solve the "nine dots" puzzle this solution requires some lateral thinking.</p>
-
+          <p class="book__description"><?php echo $data['book']->book_description; ?></p>
           <p><span class="text-secondary">Publisher : </span><span><?php echo $data['book']->publisher_name; ?></span></p>
           <p><span class="text-secondary">Published : </span><span>2015</span></p>
           <p><span class="text-secondary">Pages : </span><span>316</span></p>
           <p><span class="text-secondary">ISBN : </span><span>978-0-7356-6745-7</span></p>
-          <!-- <p><span class="text-secondary">Language : </span><span>English</span></p> -->
-          <!-- <p><span class="text-secondary">Format : </span><span>Paperback</span></p> -->
-          <!-- <p><span class="text-secondary">Weight : </span><span>0.5 kg</span></p> -->
-          <!-- <p><span class="text-secondary">Dimensions : </span><span>21.5 x 15.5 x 1.5 cm</span></p> -->
-
-          <a href="<?php echo URLROOT; ?>/carts/create/<?php echo $data['book']->book_id; ?>" class="btn btn-success rounded-0">ADD TO CART</a>
+          <?php if ($data['inCart']) : ?>
+            <a href="<?php echo URLROOT; ?>/carts/create/<?php echo $data['book']->book_id; ?>" class="me-3 btn btn-outline-success rounded-0">IN CART</a>
+            <a href="<?php echo URLROOT; ?>/carts/index/<?php echo $_SESSION['user_id']; ?>" class="btn btn-success rounded-0">VIEW CART</a>
+          <?php else : ?>
+            <a href="<?php echo URLROOT; ?>/carts/create/<?php echo $data['book']->book_id; ?>" class="btn btn-success rounded-0">ADD TO CART</a>
+          <?php endif; ?>
         </div>
       </div>
     </div>
