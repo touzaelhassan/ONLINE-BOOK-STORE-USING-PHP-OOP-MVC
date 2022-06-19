@@ -108,7 +108,7 @@
 
         </div>
       </div>
-      <div class="top__selling__books mt-5">
+      <div class="top__selling__books mt-5 p-0">
         <div class="container">
           <div class="row">
             <div class="col">

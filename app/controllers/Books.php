@@ -238,14 +238,22 @@ class Books extends Controller
 
   public function show($id)
   {
+
     $book = $this->bookModel->get_book($id);
-    $carts = $this->cartModel->get_carts($_SESSION['user_id']);
     $categories = $this->categoryModel->get_categories();
     $inCart = false;
+    $carts = [];
 
-    foreach ($carts as $cart) {
-      if ($cart->book_id == $id) {
-        $inCart = true;
+    if (isset($_SESSION['user_id'])) {
+
+      $user_id = $_SESSION['user_id'];
+
+      $carts = $this->cartModel->get_carts($user_id);
+
+      foreach ($carts as $cart) {
+        if ($cart->book_id == $id) {
+          $inCart = true;
+        }
       }
     }
 

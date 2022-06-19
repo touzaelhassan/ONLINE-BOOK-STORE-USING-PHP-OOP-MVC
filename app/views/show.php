@@ -25,12 +25,22 @@
           <p><span class="text-secondary">Published : </span><span>2015</span></p>
           <p><span class="text-secondary">Pages : </span><span>316</span></p>
           <p><span class="text-secondary">ISBN : </span><span>978-0-7356-6745-7</span></p>
+
+          
+
+
           <?php if ($data['inCart']) : ?>
             <a href="<?php echo URLROOT; ?>/carts/create/<?php echo $data['book']->book_id; ?>" class="me-3 btn btn-outline-success rounded-0">IN CART</a>
             <a href="<?php echo URLROOT; ?>/carts/index/<?php echo $_SESSION['user_id']; ?>" class="btn btn-success rounded-0">VIEW CART</a>
           <?php else : ?>
             <a href="<?php echo URLROOT; ?>/carts/create/<?php echo $data['book']->book_id; ?>" class="btn btn-success rounded-0">ADD TO CART</a>
           <?php endif; ?>
+
+
+
+
+
+
         </div>
       </div>
     </div>
