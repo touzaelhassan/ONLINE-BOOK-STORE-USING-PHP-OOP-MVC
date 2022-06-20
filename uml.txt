@@ -1,0 +1,23 @@
+# Object Oriented Design
+
+    - Collect Requirements ( Identify the problems we want to solve )
+     We need to build an online store web application where The admin can perform CRUD operations on ( categories, authors, publishers, books and users )
+     and users can creats an acount and login to view all books and book details then add the prefered book to the shopping cart then pay using Paypal to
+     get the book.
+ 
+    - Describe The Software ( Clarify The functionalities required to solve the problems = user stories )
+
+     * as an admin I can login to the dashboard to see the store statistics
+     * as an admin I can perform CRUD operations on ( categories, publishers, authors, books and users)
+
+     * as a user I want to acces the application to see all books and book details
+     * as a user I want to create an account and login to The application to add books to my shooping cart
+     * as a user I can pay using a payment method to get a book
+     * as a user I can see my books
+
+# Fundamental Diagram Types 
+
+     - Use Case Diagram = Describe The functionalities of The application
+     - Class Diagram and Relationships = Describe The structure of The application in terms of ( Objects - Attributes - Operations - Relations )
+     - Sequence Diagram
+

@@ -47,7 +47,6 @@ class User
     $this->db->execute();
     $user = $this->db->get_one();
 
-
     if (password_verify($password, $user->password)) {
       return $user;
     } else {

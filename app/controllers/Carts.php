@@ -27,6 +27,10 @@ class Carts extends Controller
   public function create($id)
   {
 
+    if (!isset($_SESSION['user_id'])) {
+      header('Location: ' . URLROOT . '/users/login');
+    }
+
     $book = $this->bookModel->get_book($id);
 
     $this->cartModel->user_id = $_SESSION["user_id"];

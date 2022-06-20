@@ -295,7 +295,6 @@ class Books extends Controller
     $books = $this->cartModel->get_cart_by_user_id($user_id);
     $categories = $this->categoryModel->get_categories();
 
-
     $data = [
       'carts' => $carts,
       'books' => $books,
@@ -305,8 +304,6 @@ class Books extends Controller
     $this->view('mybooks', $data);
   }
 
-
-
   public function search()
   {
     if ($_SERVER['REQUEST_METHOD'] == 'POST') {
@@ -314,7 +311,6 @@ class Books extends Controller
       $search = $_POST['search'];
       $books = $this->bookModel->search_books($search);
       $carts = $this->cartModel->get_carts($_SESSION['user_id']);
-
 
       $data = [
         'books' => $books,
