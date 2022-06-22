@@ -15,10 +15,12 @@
 
 <section class="books">
   <div class="container">
+
     <div class="books__title">
       <i class="fa-solid fa-down-long"></i>
       <h4>Discover your next book</h4>
     </div>
+
     <div class="row g-5 justify-content-center books__content">
       <?php foreach ($data['books'] as $book) : ?>
         <div class="col-12 col-md-6 col-lg-4 book">
@@ -47,6 +49,7 @@
         </div>
       <?php endforeach; ?>
     </div>
+
   </div>
 </section>
 

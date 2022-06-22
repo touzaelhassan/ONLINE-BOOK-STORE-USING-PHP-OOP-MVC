@@ -22,7 +22,12 @@ class User
 
   public function create_user()
   {
-    $this->db->prepare("INSERT INTO users (name, email, password) VALUES ('$this->name', '$this->email', '$this->password')");
+    $this->db->prepare("INSERT INTO users (name, email, password) VALUES (:name, :email, :password)");
+
+    $this->db->bind(':name', $this->name);
+    $this->db->bind(':email', $this->email);
+    $this->db->bind(':password', $this->password);
+
     if ($this->db->execute()) {
       $this->id = $this->db->last_id();
       return true;
@@ -33,7 +38,9 @@ class User
 
   public function delete_user()
   {
-    $this->db->prepare("DELETE FROM users WHERE id = $this->id");
+    $this->db->prepare("DELETE FROM users WHERE id = :id");
+    $this->db->bind(':id', $this->id);
+
     if ($this->db->execute()) {
       return true;
     } else {
@@ -43,12 +50,18 @@ class User
 
   public function login($email, $password)
   {
-    $this->db->prepare("SELECT * FROM users WHERE email = '$email'");
+    $this->db->prepare("SELECT * FROM users WHERE email = :email");
+    $this->db->bind(':email', $email);
+
     $this->db->execute();
     $user = $this->db->get_one();
 
-    if (password_verify($password, $user->password)) {
-      return $user;
+    if ($user) {
+      if (password_verify($password, $user->password)) {
+        return $user;
+      } else {
+        return false;
+      }
     } else {
       return false;
     }

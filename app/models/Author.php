@@ -14,7 +14,11 @@ class Author
 
   public function add_author()
   {
-    $this->db->prepare("INSERT INTO authors (name, email) VALUES ('$this->name', '$this->email')");
+    $this->db->prepare("INSERT INTO authors (name, email) VALUES (:name, :email)");
+
+    $this->db->bind(':name', $this->name);
+    $this->db->bind(':email', $this->email);
+
     if ($this->db->execute()) {
       return true;
     } else {
@@ -31,15 +35,20 @@ class Author
 
   public function get_author_by_id($id)
   {
-    $this->db->prepare("SELECT * FROM authors WHERE id = $id");
+    $this->db->prepare("SELECT * FROM authors WHERE id = :id");
+    $this->db->bind(':id', $id);
     $this->db->execute();
     return $this->db->get_one();
   }
 
-
   public function update_author()
   {
-    $this->db->prepare("UPDATE authors SET name = '$this->name', email = '$this->email' WHERE id = $this->id");
+    $this->db->prepare("UPDATE authors SET name = :name, email = :email WHERE id = :id");
+
+    $this->db->bind(':name', $this->name);
+    $this->db->bind(':email', $this->email);
+    $this->db->bind(':id', $this->id);
+
     if ($this->db->execute()) {
       return true;
     } else {
@@ -49,7 +58,8 @@ class Author
 
   public function delete_author()
   {
-    $this->db->prepare("DELETE FROM authors WHERE id = $this->id");
+    $this->db->prepare("DELETE FROM authors WHERE id = :id");
+    $this->db->bind(':id', $this->id);
     if ($this->db->execute()) {
       return true;
     } else {

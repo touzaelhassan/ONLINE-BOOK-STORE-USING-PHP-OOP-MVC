@@ -1,10 +1,11 @@
 <?php
+
 class Database
 {
-  private $db_host = 'localhost';
-  private $db_name = 'book_store';
-  private $db_user = 'root';
-  private $db_password = '';
+  private $db_host = DB_HOST;
+  private $db_name = DB_NAME;
+  private $db_user = DB_USER;
+  private $db_password = DB_PASSWORD;
 
   private $connection;
   private $stmt;
@@ -21,11 +22,20 @@ class Database
     }
   }
 
+  // prepare statement is used to prepare the sql statement for execution and returns a statement object which can be used to execute the statement later. 
   public function prepare($sql)
   {
+
     return $this->stmt = $this->connection->prepare($sql);
   }
 
+  // bindValue() is used to bind a value to a parameter it's alternative way to pass data to the database. Instead of putting data directly into SQL query
+  public function bind($param, $value)
+  {
+    $this->stmt->bindValue($param, $value,);
+  }
+
+  // execute() is used to execute the prepared statement. 
   public function execute()
   {
     return $this->stmt->execute();

@@ -13,6 +13,7 @@ class Book
   public $price;
   public $copies;
 
+
   public function __construct()
   {
     $this->db = new Database();
@@ -20,7 +21,17 @@ class Book
 
   public function add_book()
   {
-    $this->db->prepare("INSERT INTO books (category_id, publisher_id, author_id, title, description, image, price, copies) VALUES ('$this->category_id', '$this->publisher_id', '$this->author_id', '$this->title', '$this->description', '$this->image', '$this->price', '$this->copies')");
+    $this->db->prepare("INSERT INTO books (category_id, publisher_id, author_id, title, description, image, price, copies) VALUES (:category_id, :publisher_id, author_id, :title, :description, :image, :price, :copies)");
+
+    $this->db->bind(':category_id', $this->category_id);
+    $this->db->bind(':publisher_id', $this->publisher_id);
+    $this->db->bind(':author_id', $this->author_id);
+    $this->db->bind(':title', $this->title);
+    $this->db->bind(':description', $this->description);
+    $this->db->bind(':image', $this->image);
+    $this->db->bind(':price', $this->price);
+    $this->db->bind(':copies', $this->copies);
+
     if ($this->db->execute()) {
       return true;
     } else {
@@ -47,7 +58,18 @@ class Book
 
   public function update_book($id)
   {
-    $this->db->prepare("UPDATE books SET category_id = '$this->category_id', publisher_id = '$this->publisher_id', author_id = '$this->author_id', title = '$this->title', description = '$this->description', image = '$this->image', price = '$this->price', copies = '$this->copies' WHERE id = '$id'");
+    $this->db->prepare("UPDATE books SET category_id = :category_id, publisher_id = :publisher_id, author_id = :author_id, title = :title, description = :description, image = :image, price = :price, copies = :copies WHERE id = :id");
+
+    $this->db->bind(':id', $id);
+    $this->db->bind(':category_id', $this->category_id);
+    $this->db->bind(':publisher_id', $this->publisher_id);
+    $this->db->bind(':author_id', $this->author_id);
+    $this->db->bind(':title', $this->title);
+    $this->db->bind(':description', $this->description);
+    $this->db->bind(':image', $this->image);
+    $this->db->bind(':price', $this->price);
+    $this->db->bind(':copies', $this->copies);
+
     if ($this->db->execute()) {
       return true;
     } else {
@@ -57,7 +79,11 @@ class Book
 
   public function update_copies($book_id, $copies)
   {
-    $this->db->prepare("UPDATE books SET copies = '$copies' WHERE id = '$book_id'");
+    $this->db->prepare("UPDATE books SET copies = :copies WHERE id = :book_id");
+
+    $this->db->bind(':copies', $copies);
+    $this->db->bind(':book_id', $book_id);
+
     if ($this->db->execute()) {
       return true;
     } else {
@@ -76,7 +102,10 @@ class Book
 
   public function delete_book()
   {
-    $this->db->prepare("DELETE FROM books WHERE id = '$this->id'");
+    $this->db->prepare("DELETE FROM books WHERE id = :id");
+
+    $this->db->bind(':id', $this->id);
+
     if ($this->db->execute()) {
       return true;
     } else {

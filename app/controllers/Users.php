@@ -8,13 +8,14 @@ class Users extends Controller
     $this->userModel = $this->model('User');
   }
 
-
   public function index()
   {
     $users = $this->userModel->get_users();
+
     $data = [
       'users' => $users
     ];
+
     $this->view('admin/users/index', $data);
   }
 
@@ -139,6 +140,7 @@ class Users extends Controller
         empty($data['email_error']) &&
         empty($data['password_error'])
       ) {
+
         $logged_in_user = $this->userModel->login($data['email'], $data['password']);
 
         if ($logged_in_user) {

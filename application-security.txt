@@ -1,0 +1,24 @@
+1 - SQL Injection 
+-----------------
+
+Due to improper validation of data, an attacker can submit a valid SQL statement that changes the logic of the initial query used by the application
+as a result the attacker can create, read, update or delete sensitive data in the database or even get unauthorized access to the entire application.
+
+To prevent SQL Injection we use prepared statement which is a parameterized and reusable SQL query which forces the developer to write the SQL command
+and the user-provided data seperately, so The user-supplied data is not directly embedded in the SQL query.
+
+EXAMPLE :
+---------
+
+$this->db->prepare("UPDATE books SET copies = :copies WHERE id = :book_id");
+$this->db->bind(':copies', $copies);
+$this->db->bind(':book_id', $book_id);
+
+2 - Cross-site Scripting ( XSS )
+
+XSS Enables attackers to inject client-side scripts into web pages viewed by other users
+
+To prevent XSS attacks we use :
+
+mysqli_real_escape_string() => input
+htmlspecialchars()          => output

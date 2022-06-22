@@ -9,7 +9,7 @@
         <form action="<?php echo URLROOT; ?>/users/login" method="POST">
           <div class="form-group mb-3">
             <label for="email">Email : <sup class="text-danger">*</sup></label>
-            <input type="email" name="email" class="form-control form-control-lg <?php echo (!empty($data['email_error'])) ? 'is-invalid' : ''; ?>" value="<?php echo $data['email']; ?>">
+            <input type="text" name="email" class="form-control form-control-lg <?php echo (!empty($data['email_error'])) ? 'is-invalid' : ''; ?>" value="<?php echo $data['email']; ?>">
             <span class="invalid-feedback"><?php echo $data['email_error']; ?></span>
           </div>
           <div class="form-group mb-3">
