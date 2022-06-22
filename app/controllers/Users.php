@@ -6,6 +6,7 @@ class Users extends Controller
   public function __construct()
   {
     $this->userModel = $this->model('User');
+    $this->categoryModel = $this->model('Category');
   }
 
   public function index()
@@ -28,10 +29,13 @@ class Users extends Controller
 
   public function signup()
   {
+    $categories = $this->categoryModel->get_categories();
 
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
       $data = [
+        'categories' => $categories,
+
         'name' => trim($_POST['name']),
         'email' => trim($_POST['email']),
         'password' => trim($_POST['password']),
@@ -92,6 +96,8 @@ class Users extends Controller
     } else {
 
       $data = [
+        'categories' => $categories,
+
         'name' => '',
         'email' => '',
         'password' => '',
@@ -109,10 +115,13 @@ class Users extends Controller
 
   public function login()
   {
+    $categories = $this->categoryModel->get_categories();
 
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
       $data = [
+        'categories' => $categories,
+
         'email' => trim($_POST['email']),
         'password' => trim($_POST['password']),
 
@@ -144,15 +153,19 @@ class Users extends Controller
         $logged_in_user = $this->userModel->login($data['email'], $data['password']);
 
         if ($logged_in_user) {
+
           $_SESSION['user_id'] = $logged_in_user->id;
           $_SESSION['user_name'] = $logged_in_user->name;
           $_SESSION['user_email'] = $logged_in_user->email;
           $_SESSION["user_role"] = $logged_in_user->role;
 
           $this->view('users/login_success');
+
         } else {
+
           $data['password_error'] = 'Invalid password';
           $this->view('users/login', $data);
+          
         }
       } else {
         $this->view('users/login', $data);
@@ -160,6 +173,8 @@ class Users extends Controller
     } else {
 
       $data = [
+        'categories' => $categories,
+
         'email' => '',
         'password' => '',
 

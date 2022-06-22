@@ -54,10 +54,12 @@
 </section>
 
 <section class="top__selling">
+
   <div class="top__selling__heading text-center">
     <h4 class="text-capitalize">Top Selling Books Right Now</h4>
     <i class="fa-solid fa-down-long"></i>
   </div>
+
   <div class="top__selling__content">
     <div class="container">
       <div class="top__selling__container">
@@ -92,14 +94,17 @@
 </section>
 
 <section class="newsletter">
+
   <div class="top__selling__heading text-center">
     <h4>Stay in Touch With Our Updates </h4>
     <i class="fa-solid fa-down-long"></i>
   </div>
+
   <form class="newsletter__form">
     <input type="text" placeholder="Enter Your Email Address">
     <button>SEND EMAIL</button>
   </form>
+
 </section>
 
 <?php require APPROOT . '/views/includes/footer.php' ?>

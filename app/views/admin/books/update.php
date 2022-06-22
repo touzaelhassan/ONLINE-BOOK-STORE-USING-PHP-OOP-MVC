@@ -24,7 +24,7 @@
           <div class="col">
             <div class="card">
               <div class="card-header">
-                <h4 class="text-center">Add new book</h4>
+                <h4 class="text-center">Update book</h4>
               </div>
               <div class="card-body">
                 <form action="" method="POST" enctype="multipart/form-data">
@@ -39,7 +39,7 @@
                       </div>
                       <div class="form-group mb-3">
                         <label for="description" class="mb-2">Description : <sup class="text-danger">*</sup></label>
-                        <textarea name="description" class="form-control form-control-lg <?php echo (!empty($data['description_error'])) ? 'is-invalid' : ''; ?>"><?php echo $data['book_description']; ?></textarea>
+                        <textarea name="description" class="form-control form-control-lg <?php echo (!empty($data['description_error'])) ? 'is-invalid' : ''; ?>"><?php echo $data['description']; ?></textarea>
                         <span class="invalid-feedback"><?php echo $data['description_error']; ?></span>
                       </div>
                       <div class="form-group mb-3">
@@ -93,7 +93,7 @@
 
                   <div class="row mt-3 form__footer">
                     <div class="col form__footer__right">
-                      <input type="submit" value="Add" class="btn btn-success d-block form__btn">
+                      <input type="submit" value="Update" class="btn btn-success d-block form__btn">
                     </div>
                   </div>
                 </form>

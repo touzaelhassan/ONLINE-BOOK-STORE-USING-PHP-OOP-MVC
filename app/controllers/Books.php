@@ -223,7 +223,7 @@ class Books extends Controller
         'publisher_id' => $book->publisher_id,
         'author_id' => $book->author_id,
         'title' => $book->title,
-        'book_description' => $book->book_description,
+        'description' => $book->book_description,
         'image' => $book->image,
         'price' => $book->price,
         'copies' => $book->copies,
@@ -276,6 +276,9 @@ class Books extends Controller
 
   public function category($category_id)
   {
+    if (!isset($_SESSION["user_id"])) {
+      header("Location: " . URLROOT . "/users/login");
+    }
     $carts = $this->cartModel->get_carts($_SESSION['user_id']);
     $books = $this->bookModel->get_books_by_category($category_id);
     $categories = $this->categoryModel->get_categories();
