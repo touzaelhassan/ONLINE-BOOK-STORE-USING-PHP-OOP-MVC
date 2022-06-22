@@ -74,7 +74,6 @@ class Carts extends Controller
     $this->cartModel->bought = 1;
     $this->cartModel->update_bought();
 
-
     $this->view('carts/bought');
   }
 }

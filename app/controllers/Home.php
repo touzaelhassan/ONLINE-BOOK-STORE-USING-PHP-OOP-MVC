@@ -27,7 +27,6 @@ class Home extends Controller
       'categories' => $categories,
     ];
 
-
     $this->view('index', $data);
   }
 }

@@ -4,7 +4,7 @@ class Categories extends Controller
 {
   public function __construct()
   {
-    if (isset($_SESSION["user_role"]) && $_SESSION["user_role"] !== 1) {
+    if (!isset($_SESSION["user_role"]) || $_SESSION["user_role"] !== 1) {
       $this->redirect('/');
     }
 
