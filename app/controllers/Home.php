@@ -21,7 +21,6 @@ class Home extends Controller
       $carts = [];
     }
 
-
     $data = [
       'books' => $books,
       'carts' => $carts,

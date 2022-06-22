@@ -18,7 +18,6 @@ class Admin extends Controller
     $publishers = $this->publisherModel->get_publishers();
     $authors = $this->authorModel->get_authors();
     $books = $this->cartModel->top__selling__books();
-    // $sold_books = $this->cartModel->top__sold__books();
 
     $data = [
       'categories' => $categories,

@@ -103,7 +103,7 @@ class Books extends Controller
 
         move_uploaded_file($_FILES['image']['tmp_name'], 'images/books/' . $data['image']);
 
-        header('Location: ' . URLROOT . '/books');
+        $this->redirect('/books');
       } else {
         $this->view('admin/books/create', $data);
       }
@@ -205,7 +205,7 @@ class Books extends Controller
 
         move_uploaded_file($_FILES['image']['tmp_name'], 'images/books/' . $data['image']);
 
-        header('Location: ' . URLROOT . '/books');
+        $this->redirect('/books');
       } else {
         $this->view('admin/books/update', $data);
       }
@@ -271,13 +271,13 @@ class Books extends Controller
   {
     $this->bookModel->id = $id;
     $this->bookModel->delete_book();
-    header('Location: ' . URLROOT . '/books');
+    $this->redirect('/books');
   }
 
   public function category($category_id)
   {
     if (!isset($_SESSION["user_id"])) {
-      header("Location: " . URLROOT . "/users/login");
+      $this->redirect('/users/login');
     }
     $carts = $this->cartModel->get_carts($_SESSION['user_id']);
     $books = $this->bookModel->get_books_by_category($category_id);
@@ -322,7 +322,7 @@ class Books extends Controller
 
       $this->view('search', $data);
     } else {
-      header('Location: ' . URLROOT . '/books');
+      $this->redirect('/books');
     }
   }
 }

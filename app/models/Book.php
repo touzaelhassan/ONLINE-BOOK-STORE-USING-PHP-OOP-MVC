@@ -22,7 +22,7 @@ class Book
   public function add_book()
   {
     $this->db->prepare(
-      "INSERT INTO books (category_id, publisher_id, author_id, title, description, image, price, copies) VALUES (:category_id :publisher_id, :author_id, :title, :description, :image, :price, :copies)"
+      "INSERT INTO books (category_id, publisher_id, author_id, title, description, image, price, copies) VALUES (:category_id, :publisher_id, :author_id, :title, :description, :image, :price, :copies)"
     );
 
     $this->db->bind(':category_id', $this->category_id);

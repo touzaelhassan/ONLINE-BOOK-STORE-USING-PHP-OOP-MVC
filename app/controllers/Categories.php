@@ -43,7 +43,7 @@ class Categories extends Controller
         $this->categoryModel->name  = $data['name'];
         $this->categoryModel->description = $data['description'];
         $this->categoryModel->add_category();
-        header('Location: ' . URLROOT . '/categories');
+        $this->redirect('/categories');
       } else {
         $this->view('admin/categories/create', $data);
       }
@@ -86,7 +86,7 @@ class Categories extends Controller
         $this->categoryModel->name  = $data['name'];
         $this->categoryModel->description = $data['description'];
         $this->categoryModel->update_category();
-        header('Location: ' . URLROOT . '/categories');
+        $this->redirect('/categories');
       } else {
         $this->view('admin/categories/update', $data);
       }
@@ -108,6 +108,6 @@ class Categories extends Controller
   {
     $this->categoryModel->id = $id;
     $this->categoryModel->delete_category();
-    header('Location: ' . URLROOT . '/categories');
+    $this->redirect('/categories');
   }
 }

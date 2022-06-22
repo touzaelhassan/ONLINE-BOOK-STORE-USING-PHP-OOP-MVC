@@ -48,7 +48,7 @@ class Publishers extends Controller
 
         $this->publisherModel->add_publisher();
 
-        header('Location: ' . URLROOT . '/publishers');
+        $this->redirect('/publishers');
       } else {
         $this->view('admin/publishers/create', $data);
       }
@@ -96,7 +96,7 @@ class Publishers extends Controller
 
         $this->publisherModel->update_publisher($id);
 
-        header('Location: ' . URLROOT . '/publishers');
+        $this->redirect('/publishers');
       } else {
         $this->view('admin/publishers/update', $data);
       }
@@ -119,6 +119,6 @@ class Publishers extends Controller
   {
     $this->publisherModel->id = $id;
     $this->publisherModel->delete_publisher();
-    header('Location: ' . URLROOT . '/publishers');
+    $this->redirect('/publishers');
   }
 }

@@ -45,7 +45,7 @@ class Authors extends Controller
         $this->authorModel->name  = $data['name'];
         $this->authorModel->email = $data['email'];
         $this->authorModel->add_author();
-        header('Location: ' . URLROOT . '/authors');
+        $this->redirect('/authors');
       } else {
         $this->view('admin/authors/create', $data);
       }
@@ -88,7 +88,7 @@ class Authors extends Controller
         $this->authorModel->name  = $data['name'];
         $this->authorModel->email = $data['email'];
         $this->authorModel->update_author();
-        header('Location: ' . URLROOT . '/authors');
+        $this->redirect('/authors');
       } else {
         $this->view('admin/authors/update', $data);
       }
@@ -109,6 +109,6 @@ class Authors extends Controller
   {
     $this->authorModel->id = $id;
     $this->authorModel->delete_author();
-    header('Location: ' . URLROOT . '/authors');
+    $this->redirect('/authors');
   }
 }

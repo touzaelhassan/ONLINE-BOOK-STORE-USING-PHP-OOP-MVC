@@ -24,7 +24,7 @@ class Users extends Controller
   {
     $this->userModel->id = $id;
     $this->userModel->delete_user();
-    header('Location: ' . URLROOT . '/users');
+    $this->redirect('/users');
   }
 
   public function signup()
@@ -160,12 +160,10 @@ class Users extends Controller
           $_SESSION["user_role"] = $logged_in_user->role;
 
           $this->view('users/login_success');
-
         } else {
 
           $data['password_error'] = 'Invalid password';
           $this->view('users/login', $data);
-          
         }
       } else {
         $this->view('users/login', $data);
