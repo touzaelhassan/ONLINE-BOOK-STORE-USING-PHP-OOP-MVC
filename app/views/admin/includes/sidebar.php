@@ -37,12 +37,6 @@
           <span class="ms-1 fs-6">Users</span>
         </a>
       </li>
-      <li class="nav-item">
-        <a class="nav-link" href="<?php echo URLROOT; ?>/orders">
-          <i class="fa-solid fa-cart-shopping"></i>
-          <span class="ms-1 fs-6">Orders</span>
-        </a>
-      </li>
     </ul>
 
     <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted text-uppercase">

@@ -15,13 +15,14 @@ class Router
 
       if (file_exists("../app/controllers/$controller_name.php")) {
         $this->currentController = $controller_name;
-        unset($url[0]);
+        unset($url[0]); 
       }
     }
 
     require_once "../app/controllers/$this->currentController.php";
 
-    $this->currentController = new $this->currentController;
+    $this->currentController = new $this->currentController; 
+
 
     if (isset($url[1])) {
       if (method_exists($this->currentController, $url[1])) {

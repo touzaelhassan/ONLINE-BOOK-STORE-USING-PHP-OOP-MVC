@@ -11,6 +11,10 @@ class Users extends Controller
 
   public function index()
   {
+    if (isset($_SESSION["user_role"]) && $_SESSION["user_role"] !== 1) {
+      $this->redirect('/');
+    }
+
     $users = $this->userModel->get_users();
 
     $data = [

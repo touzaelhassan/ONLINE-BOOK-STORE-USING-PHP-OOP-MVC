@@ -26,7 +26,12 @@ class Books extends Controller
   }
 
   public function create()
+
   {
+    if (isset($_SESSION["user_role"]) && $_SESSION["user_role"] !== 1) {
+      $this->redirect('/');
+    }
+
     if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
       $data = [
@@ -129,6 +134,10 @@ class Books extends Controller
 
   public function update($id)
   {
+    if (isset($_SESSION["user_role"]) && $_SESSION["user_role"] !== 1) {
+      $this->redirect('/');
+    }
+
     if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
       $data = [
