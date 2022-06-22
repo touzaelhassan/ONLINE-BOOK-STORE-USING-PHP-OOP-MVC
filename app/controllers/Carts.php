@@ -28,7 +28,7 @@ class Carts extends Controller
   {
 
     if (!isset($_SESSION['user_id'])) {
-      $this->redirect('users/login');
+      $this->redirect('/users/login');
     }
 
     $book = $this->bookModel->get_book($id);
