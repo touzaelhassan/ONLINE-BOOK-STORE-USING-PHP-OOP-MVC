@@ -37,7 +37,6 @@
                         <th>Category</th>
                         <th>Publisher</th>
                         <th>Author</th>
-                        <th>Description</th>
                         <th>Price</th>
                         <th>Copies</th>
                         <th>Image</th>
@@ -53,7 +52,6 @@
                           <td><?php echo $book->category_name; ?></td>
                           <td><?php echo $book->publisher_name; ?></td>
                           <td><?php echo $book->author_name; ?></td>
-                          <td><?php echo $book->book_description; ?></td>
                           <td><?php echo $book->price; ?></td>
                           <td><?php echo $book->copies; ?></td>
                           <td class="text-center">

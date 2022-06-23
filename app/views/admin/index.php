@@ -130,7 +130,7 @@
                         </tr>
                       </thead>
                       <tbody>
-                        <?php foreach ($data['books'] as $book) : ?>
+                        <?php foreach ($data['top_books'] as $book) : ?>
                           <tr>
                             <td><?php echo $book->book_id; ?></td>
                             <td class="text-center">

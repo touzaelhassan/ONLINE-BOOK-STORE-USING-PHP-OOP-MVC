@@ -54,6 +54,7 @@ class Books extends Controller
         'copies_error' => '',
       ];
 
+
       if (empty($data['category_id'])) {
         $data['category_id_error'] = 'Category is required';
       }

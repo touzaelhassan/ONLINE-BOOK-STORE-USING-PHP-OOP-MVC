@@ -61,28 +61,27 @@
                         <span class="invalid-feedback"><?php echo $data['copies_error']; ?></span>
                       </div>
                       <div class="mt-5 mb-4">
+
                         <select class="form-select" name="category_id">
-                          <option value="">Select Category</option>
                           <?php foreach ($data['categories'] as $category) : ?>
-                            <option value="<?php echo $category->id ?>"><?php echo $category->name ?></option>
+                            <option value="<?php echo $category->id; ?>" <?php echo ($data['category_id'] == $category->id) ? 'selected' : ''; ?>><?php echo $category->name; ?></option>
                           <?php endforeach; ?>
                         </select>
+
                         <div class="invalid-feedback">Example invalid select feedback</div>
                       </div>
                       <div class="mb-4">
                         <select class="form-select" name="publisher_id">
-                          <option value="">Select Publisher</option>
                           <?php foreach ($data['publishers'] as $publisher) : ?>
-                            <option value="<?php echo $publisher->id ?>"><?php echo $publisher->name ?></option>
+                            <option value="<?php echo $publisher->id; ?>" <?php echo ($data['publisher_id'] == $publisher->id) ? 'selected' : ''; ?>><?php echo $publisher->name; ?></option>
                           <?php endforeach; ?>
                         </select>
                         <div class="invalid-feedback">Example invalid select feedback</div>
                       </div>
                       <div class="mb-4">
                         <select class="form-select" name="author_id">
-                          <option value="">Select Author</option>
                           <?php foreach ($data['authors'] as $author) : ?>
-                            <option value="<?php echo $author->id ?>"><?php echo $author->name ?></option>
+                            <option value="<?php echo $author->id; ?>" <?php echo ($data['author_id'] == $author->id) ? 'selected' : ''; ?>><?php echo $author->name; ?></option>
                           <?php endforeach; ?>
                         </select>
                         <div class="invalid-feedback">Example invalid select feedback</div>

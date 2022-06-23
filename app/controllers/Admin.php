@@ -22,13 +22,15 @@ class Admin extends Controller
     $categories = $this->categoryModel->get_categories();
     $publishers = $this->publisherModel->get_publishers();
     $authors = $this->authorModel->get_authors();
-    $books = $this->cartModel->top__selling__books();
+    $books = $this->bookModel->get_books();
+    $top_books = $this->cartModel->top__selling__books();
 
     $data = [
       'categories' => $categories,
       'publishers' => $publishers,
       'authors' => $authors,
-      'books' => $books
+      'books' => $books,
+      'top_books' => $top_books
     ];
 
     $this->view('admin/index', $data);
