@@ -60,17 +60,15 @@ class Carts extends Controller
     $this->redirect('/carts/index/' . $_SESSION["user_id"]);
   }
 
-
   public function updatebought()
   {
-    $this->cartModel->user_id = $_SESSION["user_id"];
     $unpaid_books =  $this->cartModel->get_carts($_SESSION["user_id"]);
 
     foreach ($unpaid_books as $book) {
       $this->bookModel->update_copies($book->book_id, $book->copies - $book->cart_copies);
     }
 
-    $this->cartModel->id = $book->id;
+    $this->cartModel->user_id = $_SESSION["user_id"];
     $this->cartModel->bought = 1;
     $this->cartModel->update_bought();
 

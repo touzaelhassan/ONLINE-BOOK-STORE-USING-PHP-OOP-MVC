@@ -9,6 +9,7 @@
       </div>
       <div class="table-responsive">
         <table class="table table-bordered">
+
           <thead>
             <tr>
               <th>Apply</th>
@@ -20,6 +21,7 @@
               <th>Delete</th>
             </tr>
           </thead>
+
           <tbody>
             <?php foreach ($data['carts'] as $cart) : ?>
               <tr>
@@ -43,12 +45,14 @@
               </tr>
             <?php endforeach; ?>
           </tbody>
+
         </table>
       </div>
     </div>
   </section>
 
   <section class="payment__section my-4">
+
     <div class="container">
       <div class="row payment__content">
         <div class="col-9 payment__amount">
@@ -103,6 +107,7 @@
     </div>
 
   </section>
+
 <?php else : ?>
   <div class="login-success cart">
     <div class="login-success__content">
@@ -128,6 +133,7 @@
         }]
       });
     },
+    
     // Finalize the transaction after payer approval
     onApprove: (data, actions) => {
       return actions.order.capture().then(function(orderData) {
