@@ -319,6 +319,11 @@ class Books extends Controller
 
   public function search()
   {
+
+    if (!isset($_SESSION["user_role"]) || $_SESSION["user_role"] !== 1) {
+      $this->redirect('/users/login');
+    }
+
     if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
       $search = $_POST['search'];
