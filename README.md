@@ -46,7 +46,7 @@ The Administrator will be provided with special functionalities like
 - Manage member orders.
 - Add or delete a Credit Card type.
 
-## - 4 - Technologies :
+## 4 - Technologies :
 
 1 - Frontend : HTML / CSS / JavaScript / Bootstrap
 
